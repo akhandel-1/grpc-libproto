@@ -1,0 +1,33 @@
+# grpc-libproto
+
+Prerequisites – 
+The following table provides information about the versions of key components used in the project's implementation.
+
+Component	Version
+Protobuf	3.12.x
+libprotoc	3.15.8
+gRPC stack	v1.0.0
+gNMI version	070
+
+Sample Yang Data model used in tree format--
+The snippet of the data which we want to serialize is
+
+  +--rw fps
+  |  +--rw fp* [name]
+  |     +--rw name                               string
+  |     +--rw description?                       string
+  |     +--rw fd-name?                           -> /mef-fd:fds/fd/name
+  |     +--rw logical-port?                      mef-logical-port:logical-port-ref
+  |     +--rw (type)?
+  |     |  +--:(q-in-q)
+  |     |  |  +--rw svlan?                       uint32
+  |     |  +--:(mpls-pw)
+  |     |  |  +--rw mpls-pw?                     empty
+  |     |  +--:(uni)
+  |     |  |  +--rw uni?                         empty
+  |     |  +--:(other)
+  |     |     +--rw other?                       empty
+
+Compilation steps -
+make clean
+make
