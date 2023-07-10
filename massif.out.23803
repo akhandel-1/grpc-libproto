@@ -1,0 +1,1655 @@
+--------------------------------------------------------------------------------
+Command:            ./proto_heap
+Massif arguments:   (none)
+ms_print arguments: massif.out.23803
+--------------------------------------------------------------------------------
+
+
+    MB
+765.0^                                              #                         
+     |                                    ::::::::::#:                        
+     |                                  ::::        #::                       
+     |                                @:::::        #:::                      
+     |                               :@:::::        #:::::                    
+     |                            ::::@:::::        #::::::                   
+     |                           :::::@:::::        #:::::::                  
+     |                         :::::::@:::::        #::::::::                 
+     |                       :::::::::@:::::        #::::::::::               
+     |                     :::::::::::@:::::        #::::::::::@              
+     |                   :@:::::::::::@:::::        #::::::::::@:             
+     |                  ::@:::::::::::@:::::        #::::::::::@:::           
+     |               @::::@:::::::::::@:::::        #::::::::::@::::          
+     |              :@::::@:::::::::::@:::::        #::::::::::@:::::         
+     |            @::@::::@:::::::::::@:::::        #::::::::::@::::::@       
+     |          ::@::@::::@:::::::::::@:::::        #::::::::::@::::::@:      
+     |         :::@::@::::@:::::::::::@:::::        #::::::::::@::::::@::     
+     |      ::::::@::@::::@:::::::::::@:::::        #::::::::::@::::::@::::   
+     |     ::: :::@::@::::@:::::::::::@:::::        #::::::::::@::::::@:::::  
+     |   ::::: :::@::@::::@:::::::::::@:::::        #::::::::::@::::::@:::::@ 
+   0 +----------------------------------------------------------------------->Gi
+     0                                                                   2.450
+
+Number of snapshots: 75
+ Detailed snapshots: [12, 15, 20, 34, 40 (peak), 52, 62, 72]
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0
+  1     26,499,014            1,048            1,040             8            0
+  2     62,157,587       20,529,856       16,718,519     3,811,337            0
+  3    112,043,233       50,016,360       40,725,303     9,291,057            0
+  4    136,153,053       64,355,680       52,418,311    11,937,369            0
+  5    184,265,746       92,738,160       75,514,561    17,223,599            0
+  6    214,360,743      110,724,880       90,200,050    20,524,830            0
+  7    245,939,252      129,353,544      105,359,119    23,994,425            0
+  8    291,051,351      155,965,848      127,014,810    28,951,038            0
+  9    338,507,073      183,960,952      149,795,829    34,165,123            0
+ 10    372,429,180      203,972,024      166,079,786    37,892,238            0
+ 11    410,941,384      227,157,328      185,044,484    42,112,844            0
+ 12    444,863,438      247,168,384      201,328,422    45,839,962            0
+81.45% (201,328,422B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.91% (49,219,968B) 0x411599: CreateMessageInternal<gnmi::PathElem> (arena.h:501)
+| ->19.91% (49,219,968B) 0x411599: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|   ->15.93% (39,375,872B) 0x404A2A: New (repeated_field.h:802)
+|   | ->15.93% (39,375,872B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|   |   ->15.93% (39,375,872B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|   |     ->15.93% (39,375,872B) 0x404A2A: Add (repeated_field.h:2181)
+|   |       ->15.93% (39,375,872B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|   |         ->15.93% (39,375,872B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|   |           ->15.93% (39,375,872B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |             ->15.93% (39,375,872B) 0x404556: main (main.c:23)
+|   |               
+|   ->03.98% (9,843,968B) 0x4264AD: New (repeated_field.h:802)
+|   | ->03.98% (9,843,968B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|   |   ->03.98% (9,843,968B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|   |     ->03.98% (9,843,968B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|   |       ->03.98% (9,843,968B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|   |         ->03.98% (9,843,968B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|   |           ->03.98% (9,843,968B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|   |             ->03.98% (9,843,968B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|   |               ->03.98% (9,843,968B) 0x404556: main (main.c:23)
+|   |                 
+|   ->00.00% (128B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->13.69% (33,838,640B) 0x4101C9: CreateMessageInternal<gnmi::Path> (arena.h:501)
+| ->13.69% (33,838,640B) 0x4101C9: gnmi::Path* google::protobuf::Arena::CreateMaybeMessage<gnmi::Path>(google::protobuf::Arena*) (gNMI.pb.cc:8678)
+|   ->10.95% (27,070,912B) 0x404B9E: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|   | ->10.95% (27,070,912B) 0x404B9E: _internal_mutable_path (gNMI.pb.h:5653)
+|   |   ->10.95% (27,070,912B) 0x404B9E: mutable_path (gNMI.pb.h:5660)
+|   |     ->10.95% (27,070,912B) 0x404B9E: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |       ->10.95% (27,070,912B) 0x404556: main (main.c:23)
+|   |         
+|   ->02.74% (6,767,728B) 0x404CA6: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|     ->02.74% (6,767,728B) 0x404CA6: _internal_mutable_prefix (gNMI.pb.h:5389)
+|       ->02.74% (6,767,728B) 0x404CA6: mutable_prefix (gNMI.pb.h:5396)
+|         ->02.74% (6,767,728B) 0x404CA6: serializeDataIntoGetResp (proto_gnmi.c:43)
+|           ->02.74% (6,767,728B) 0x404556: main (main.c:23)
+|             
+->09.96% (24,610,048B) 0x425457: allocate (map.h:112)
+| ->09.96% (24,610,048B) 0x425457: Alloc<void*> (map.h:955)
+|   ->09.96% (24,610,048B) 0x425457: google::protobuf::Map<std::string, std::string>::InnerMap::CreateEmptyTable(unsigned long) (map.h:979)
+|     ->09.96% (24,610,048B) 0x411499: InnerMap (map.h:386)
+|       ->09.96% (24,610,048B) 0x411499: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+|         ->09.96% (24,610,048B) 0x411499: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|           ->09.96% (24,610,048B) 0x411499: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|             ->09.96% (24,610,048B) 0x411499: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|               ->09.96% (24,610,048B) 0x411499: Init (map.h:315)
+|                 ->09.96% (24,610,048B) 0x411499: Map (map.h:274)
+|                   ->09.96% (24,610,048B) 0x411499: MapFieldLite (map_field_lite.h:68)
+|                     ->09.96% (24,610,048B) 0x411499: MapField (map_field.h:455)
+|                       ->09.96% (24,610,048B) 0x411499: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                         ->09.96% (24,609,984B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                         | ->09.96% (24,609,984B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                         |   ->07.97% (19,687,936B) 0x404A2A: New (repeated_field.h:802)
+|                         |   | ->07.97% (19,687,936B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->07.97% (19,687,936B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                         |   |     ->07.97% (19,687,936B) 0x404A2A: Add (repeated_field.h:2181)
+|                         |   |       ->07.97% (19,687,936B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                         |   |         ->07.97% (19,687,936B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                         |   |           ->07.97% (19,687,936B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                         |   |             ->07.97% (19,687,936B) 0x404556: main (main.c:23)
+|                         |   |               
+|                         |   ->01.99% (4,921,984B) 0x4264AD: New (repeated_field.h:802)
+|                         |   | ->01.99% (4,921,984B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->01.99% (4,921,984B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                         |   |     ->01.99% (4,921,984B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                         |   |       ->01.99% (4,921,984B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                         |   |         ->01.99% (4,921,984B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                         |   |           ->01.99% (4,921,984B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                         |   |             ->01.99% (4,921,984B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                         |   |               ->01.99% (4,921,984B) 0x404556: main (main.c:23)
+|                         |   |                 
+|                         |   ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         |   
+|                         ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         
+->07.89% (19,506,064B) 0x4F29998: google::protobuf::internal::RepeatedPtrFieldBase::InternalExtend(int) (repeated_field.cc:66)
+| ->04.98% (12,304,960B) 0x404BC7: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1734)
+| | ->04.98% (12,304,960B) 0x404BC7: Add (repeated_field.h:2181)
+| |   ->04.98% (12,304,960B) 0x404BC7: _internal_add_elem (gNMI.pb.h:7164)
+| |     ->04.98% (12,304,960B) 0x404BC7: add_elem (gNMI.pb.h:7168)
+| |       ->04.98% (12,304,960B) 0x404BC7: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |         ->04.98% (12,304,960B) 0x404556: main (main.c:23)
+| |           
+| ->01.24% (3,076,240B) 0x404BE6: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1734)
+| | ->01.24% (3,076,240B) 0x404BE6: Add (repeated_field.h:2181)
+| |   ->01.24% (3,076,240B) 0x404BE6: _internal_add_update (gNMI.pb.h:5526)
+| |     ->01.24% (3,076,240B) 0x404BE6: add_update (gNMI.pb.h:5530)
+| |       ->01.24% (3,076,240B) 0x404BE6: serializeDataIntoGetResp (proto_gnmi.c:47)
+| |         ->01.24% (3,076,240B) 0x404556: main (main.c:23)
+| |           
+| ->01.24% (3,076,240B) 0x413762: MergeFromInternal (repeated_field.h:1799)
+| | ->01.24% (3,076,240B) 0x413762: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+| |   ->01.24% (3,076,240B) 0x413762: MergeFrom (repeated_field.h:2287)
+| |     ->01.24% (3,076,240B) 0x413762: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+| |       ->01.24% (3,076,240B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+| |         ->01.24% (3,076,240B) 0x404556: main (main.c:23)
+| |           
+| ->00.42% (1,048,624B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->07.47% (18,457,536B) 0x411460: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+| ->07.47% (18,457,536B) 0x411460: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|   ->07.47% (18,457,536B) 0x411460: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|     ->07.47% (18,457,536B) 0x411460: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|       ->07.47% (18,457,536B) 0x411460: Init (map.h:315)
+|         ->07.47% (18,457,536B) 0x411460: Map (map.h:274)
+|           ->07.47% (18,457,536B) 0x411460: MapFieldLite (map_field_lite.h:68)
+|             ->07.47% (18,457,536B) 0x411460: MapField (map_field.h:455)
+|               ->07.47% (18,457,536B) 0x411460: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                 ->07.47% (18,457,488B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                 | ->07.47% (18,457,488B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                 |   ->05.97% (14,765,952B) 0x404A2A: New (repeated_field.h:802)
+|                 |   | ->05.97% (14,765,952B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->05.97% (14,765,952B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                 |   |     ->05.97% (14,765,952B) 0x404A2A: Add (repeated_field.h:2181)
+|                 |   |       ->05.97% (14,765,952B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                 |   |         ->05.97% (14,765,952B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                 |   |           ->05.97% (14,765,952B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                 |   |             ->05.97% (14,765,952B) 0x404556: main (main.c:23)
+|                 |   |               
+|                 |   ->01.49% (3,691,488B) 0x4264AD: New (repeated_field.h:802)
+|                 |   | ->01.49% (3,691,488B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->01.49% (3,691,488B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                 |   |     ->01.49% (3,691,488B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                 |   |       ->01.49% (3,691,488B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                 |   |         ->01.49% (3,691,488B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                 |   |           ->01.49% (3,691,488B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                 |   |             ->01.49% (3,691,488B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                 |   |               ->01.49% (3,691,488B) 0x404556: main (main.c:23)
+|                 |   |                 
+|                 |   ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 |   
+|                 ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->07.35% (18,155,070B) 0x640DCD8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| ->07.34% (18,150,354B) 0x640F560: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.19)
+| | ->07.34% (18,150,354B) 0x640F997: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| |   ->03.98% (9,843,968B) 0x404AEA: set_string_val (gNMI.pb.h:5926)
+| |   | ->03.98% (9,843,968B) 0x404AEA: serializeDataIntoGetResp (proto_gnmi.c:50)
+| |   |   ->03.98% (9,843,968B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->03.36% (8,305,848B) 0x404A67: set_name (gNMI.pb.h:7296)
+| |   | ->03.36% (8,305,848B) 0x404A67: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |   |   ->03.36% (8,305,848B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->00.00% (538B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.00% (4,716B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.97% (14,765,952B) 0x408289: CreateMessageInternal<gnmi::Update> (arena.h:501)
+| ->05.97% (14,765,952B) 0x408289: gnmi::Update* google::protobuf::Arena::CreateMaybeMessage<gnmi::Update>(google::protobuf::Arena*) (gNMI.pb.cc:8672)
+|   ->05.97% (14,765,952B) 0x4049D2: New (repeated_field.h:802)
+|     ->05.97% (14,765,952B) 0x4049D2: NewFromPrototype (repeated_field.h:832)
+|       ->05.97% (14,765,952B) 0x4049D2: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1738)
+|         ->05.97% (14,765,952B) 0x4049D2: Add (repeated_field.h:2181)
+|           ->05.97% (14,765,952B) 0x4049D2: _internal_add_update (gNMI.pb.h:5526)
+|             ->05.97% (14,765,952B) 0x4049D2: add_update (gNMI.pb.h:5530)
+|               ->05.97% (14,765,952B) 0x4049D2: serializeDataIntoGetResp (proto_gnmi.c:47)
+|                 ->05.97% (14,765,952B) 0x404556: main (main.c:23)
+|                   
+->03.98% (9,843,968B) 0x408389: CreateMessageInternal<gnmi::TypedValue> (arena.h:501)
+| ->03.98% (9,843,968B) 0x408389: gnmi::TypedValue* google::protobuf::Arena::CreateMaybeMessage<gnmi::TypedValue>(google::protobuf::Arena*) (gNMI.pb.cc:8675)
+|   ->03.98% (9,843,968B) 0x404C46: CreateMaybeMessage<gnmi::TypedValue> (message_lite.h:450)
+|     ->03.98% (9,843,968B) 0x404C46: _internal_mutable_val (gNMI.pb.h:5815)
+|       ->03.98% (9,843,968B) 0x404C46: mutable_val (gNMI.pb.h:5822)
+|         ->03.98% (9,843,968B) 0x404C46: serializeDataIntoGetResp (proto_gnmi.c:50)
+|           ->03.98% (9,843,968B) 0x404556: main (main.c:23)
+|             
+->02.99% (7,382,976B) 0x416B19: CreateMessageInternal<gnmi::Notification> (arena.h:501)
+| ->02.99% (7,382,976B) 0x416B19: gnmi::Notification* google::protobuf::Arena::CreateMaybeMessage<gnmi::Notification>(google::protobuf::Arena*) (gNMI.pb.cc:8669)
+|   ->02.99% (7,382,976B) 0x404954: New (repeated_field.h:802)
+|     ->02.99% (7,382,976B) 0x404954: NewFromPrototype (repeated_field.h:832)
+|       ->02.99% (7,382,976B) 0x404954: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1738)
+|         ->02.99% (7,382,976B) 0x404954: Add (repeated_field.h:2181)
+|           ->02.99% (7,382,976B) 0x404954: _internal_add_notification (gNMI.pb.h:9784)
+|             ->02.99% (7,382,976B) 0x404954: add_notification (gNMI.pb.h:9788)
+|               ->02.99% (7,382,976B) 0x404954: serializeDataIntoGetResp (proto_gnmi.c:39)
+|                 ->02.99% (7,382,976B) 0x404556: main (main.c:23)
+|                   
+->02.24% (5,537,240B) 0x404ED9: CreateInternal<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:511)
+| ->02.24% (5,537,240B) 0x404ED9: DoCreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:561)
+|   ->02.24% (5,537,240B) 0x404ED9: CreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:568)
+|     ->02.24% (5,537,240B) 0x404ED9: CreateNoMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:587)
+|       ->02.24% (5,537,240B) 0x404ED9: Create<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:325)
+|         ->02.24% (5,537,240B) 0x404ED9: google::protobuf::internal::ArenaStringPtr::CreateInstance(google::protobuf::Arena*, std::string const*) (arenastring.h:373)
+|           ->02.24% (5,537,240B) in 4 places, all below massif's threshold (1.00%)
+|             
+->00.00% (10,960B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 13    497,801,028      278,397,192      226,740,850    51,656,342            0
+ 14    538,403,403      302,349,192      246,231,790    56,117,402            0
+ 15    574,494,367      323,639,976      263,557,165    60,082,811            0
+81.44% (263,557,165B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.93% (64,514,304B) 0x411599: CreateMessageInternal<gnmi::PathElem> (arena.h:501)
+| ->19.93% (64,514,304B) 0x411599: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|   ->15.95% (51,611,264B) 0x404A2A: New (repeated_field.h:802)
+|   | ->15.95% (51,611,264B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|   |   ->15.95% (51,611,264B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|   |     ->15.95% (51,611,264B) 0x404A2A: Add (repeated_field.h:2181)
+|   |       ->15.95% (51,611,264B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|   |         ->15.95% (51,611,264B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|   |           ->15.95% (51,611,264B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |             ->15.95% (51,611,264B) 0x404556: main (main.c:23)
+|   |               
+|   ->03.99% (12,902,912B) 0x4264AD: New (repeated_field.h:802)
+|   | ->03.99% (12,902,912B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|   |   ->03.99% (12,902,912B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|   |     ->03.99% (12,902,912B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|   |       ->03.99% (12,902,912B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|   |         ->03.99% (12,902,912B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|   |           ->03.99% (12,902,912B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|   |             ->03.99% (12,902,912B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|   |               ->03.99% (12,902,912B) 0x404556: main (main.c:23)
+|   |                 
+|   ->00.00% (128B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->13.70% (44,353,496B) 0x4101C9: CreateMessageInternal<gnmi::Path> (arena.h:501)
+| ->13.70% (44,353,496B) 0x4101C9: gnmi::Path* google::protobuf::Arena::CreateMaybeMessage<gnmi::Path>(google::protobuf::Arena*) (gNMI.pb.cc:8678)
+|   ->10.96% (35,482,744B) 0x404B9E: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|   | ->10.96% (35,482,744B) 0x404B9E: _internal_mutable_path (gNMI.pb.h:5653)
+|   |   ->10.96% (35,482,744B) 0x404B9E: mutable_path (gNMI.pb.h:5660)
+|   |     ->10.96% (35,482,744B) 0x404B9E: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |       ->10.96% (35,482,744B) 0x404556: main (main.c:23)
+|   |         
+|   ->02.74% (8,870,752B) 0x404CA6: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|     ->02.74% (8,870,752B) 0x404CA6: _internal_mutable_prefix (gNMI.pb.h:5389)
+|       ->02.74% (8,870,752B) 0x404CA6: mutable_prefix (gNMI.pb.h:5396)
+|         ->02.74% (8,870,752B) 0x404CA6: serializeDataIntoGetResp (proto_gnmi.c:43)
+|           ->02.74% (8,870,752B) 0x404556: main (main.c:23)
+|             
+->09.97% (32,257,216B) 0x425457: allocate (map.h:112)
+| ->09.97% (32,257,216B) 0x425457: Alloc<void*> (map.h:955)
+|   ->09.97% (32,257,216B) 0x425457: google::protobuf::Map<std::string, std::string>::InnerMap::CreateEmptyTable(unsigned long) (map.h:979)
+|     ->09.97% (32,257,216B) 0x411499: InnerMap (map.h:386)
+|       ->09.97% (32,257,216B) 0x411499: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+|         ->09.97% (32,257,216B) 0x411499: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|           ->09.97% (32,257,216B) 0x411499: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|             ->09.97% (32,257,216B) 0x411499: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|               ->09.97% (32,257,216B) 0x411499: Init (map.h:315)
+|                 ->09.97% (32,257,216B) 0x411499: Map (map.h:274)
+|                   ->09.97% (32,257,216B) 0x411499: MapFieldLite (map_field_lite.h:68)
+|                     ->09.97% (32,257,216B) 0x411499: MapField (map_field.h:455)
+|                       ->09.97% (32,257,216B) 0x411499: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                         ->09.97% (32,257,152B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                         | ->09.97% (32,257,152B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                         |   ->07.97% (25,805,632B) 0x404A2A: New (repeated_field.h:802)
+|                         |   | ->07.97% (25,805,632B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->07.97% (25,805,632B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                         |   |     ->07.97% (25,805,632B) 0x404A2A: Add (repeated_field.h:2181)
+|                         |   |       ->07.97% (25,805,632B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                         |   |         ->07.97% (25,805,632B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                         |   |           ->07.97% (25,805,632B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                         |   |             ->07.97% (25,805,632B) 0x404556: main (main.c:23)
+|                         |   |               
+|                         |   ->01.99% (6,451,456B) 0x4264AD: New (repeated_field.h:802)
+|                         |   | ->01.99% (6,451,456B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->01.99% (6,451,456B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                         |   |     ->01.99% (6,451,456B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                         |   |       ->01.99% (6,451,456B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                         |   |         ->01.99% (6,451,456B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                         |   |           ->01.99% (6,451,456B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                         |   |             ->01.99% (6,451,456B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                         |   |               ->01.99% (6,451,456B) 0x404556: main (main.c:23)
+|                         |   |                 
+|                         |   ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         |   
+|                         ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         
+->07.80% (25,241,464B) 0x4F29998: google::protobuf::internal::RepeatedPtrFieldBase::InternalExtend(int) (repeated_field.cc:66)
+| ->04.98% (16,128,520B) 0x404BC7: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1734)
+| | ->04.98% (16,128,520B) 0x404BC7: Add (repeated_field.h:2181)
+| |   ->04.98% (16,128,520B) 0x404BC7: _internal_add_elem (gNMI.pb.h:7164)
+| |     ->04.98% (16,128,520B) 0x404BC7: add_elem (gNMI.pb.h:7168)
+| |       ->04.98% (16,128,520B) 0x404BC7: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |         ->04.98% (16,128,520B) 0x404556: main (main.c:23)
+| |           
+| ->01.25% (4,032,160B) 0x404BE6: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1734)
+| | ->01.25% (4,032,160B) 0x404BE6: Add (repeated_field.h:2181)
+| |   ->01.25% (4,032,160B) 0x404BE6: _internal_add_update (gNMI.pb.h:5526)
+| |     ->01.25% (4,032,160B) 0x404BE6: add_update (gNMI.pb.h:5530)
+| |       ->01.25% (4,032,160B) 0x404BE6: serializeDataIntoGetResp (proto_gnmi.c:47)
+| |         ->01.25% (4,032,160B) 0x404556: main (main.c:23)
+| |           
+| ->01.25% (4,032,160B) 0x413762: MergeFromInternal (repeated_field.h:1799)
+| | ->01.25% (4,032,160B) 0x413762: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+| |   ->01.25% (4,032,160B) 0x413762: MergeFrom (repeated_field.h:2287)
+| |     ->01.25% (4,032,160B) 0x413762: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+| |       ->01.25% (4,032,160B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+| |         ->01.25% (4,032,160B) 0x404556: main (main.c:23)
+| |           
+| ->00.32% (1,048,624B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->07.48% (24,192,912B) 0x411460: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+| ->07.48% (24,192,912B) 0x411460: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|   ->07.48% (24,192,912B) 0x411460: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|     ->07.48% (24,192,912B) 0x411460: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|       ->07.48% (24,192,912B) 0x411460: Init (map.h:315)
+|         ->07.48% (24,192,912B) 0x411460: Map (map.h:274)
+|           ->07.48% (24,192,912B) 0x411460: MapFieldLite (map_field_lite.h:68)
+|             ->07.48% (24,192,912B) 0x411460: MapField (map_field.h:455)
+|               ->07.48% (24,192,912B) 0x411460: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                 ->07.48% (24,192,864B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                 | ->07.48% (24,192,864B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                 |   ->05.98% (19,354,224B) 0x404A2A: New (repeated_field.h:802)
+|                 |   | ->05.98% (19,354,224B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->05.98% (19,354,224B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                 |   |     ->05.98% (19,354,224B) 0x404A2A: Add (repeated_field.h:2181)
+|                 |   |       ->05.98% (19,354,224B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                 |   |         ->05.98% (19,354,224B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                 |   |           ->05.98% (19,354,224B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                 |   |             ->05.98% (19,354,224B) 0x404556: main (main.c:23)
+|                 |   |               
+|                 |   ->01.50% (4,838,592B) 0x4264AD: New (repeated_field.h:802)
+|                 |   | ->01.50% (4,838,592B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->01.50% (4,838,592B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                 |   |     ->01.50% (4,838,592B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                 |   |       ->01.50% (4,838,592B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                 |   |         ->01.50% (4,838,592B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                 |   |           ->01.50% (4,838,592B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                 |   |             ->01.50% (4,838,592B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                 |   |               ->01.50% (4,838,592B) 0x404556: main (main.c:23)
+|                 |   |                 
+|                 |   ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 |   
+|                 ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->07.35% (23,794,789B) 0x640DCD8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| ->07.35% (23,790,073B) 0x640F560: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.19)
+| | ->07.35% (23,790,073B) 0x640F997: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| |   ->03.99% (12,902,784B) 0x404AEA: set_string_val (gNMI.pb.h:5926)
+| |   | ->03.99% (12,902,784B) 0x404AEA: serializeDataIntoGetResp (proto_gnmi.c:50)
+| |   |   ->03.99% (12,902,784B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->03.36% (10,886,751B) 0x404A67: set_name (gNMI.pb.h:7296)
+| |   | ->03.36% (10,886,751B) 0x404A67: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |   |   ->03.36% (10,886,751B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->00.00% (538B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.00% (4,716B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.98% (19,354,224B) 0x408289: CreateMessageInternal<gnmi::Update> (arena.h:501)
+| ->05.98% (19,354,224B) 0x408289: gnmi::Update* google::protobuf::Arena::CreateMaybeMessage<gnmi::Update>(google::protobuf::Arena*) (gNMI.pb.cc:8672)
+|   ->05.98% (19,354,224B) 0x4049D2: New (repeated_field.h:802)
+|     ->05.98% (19,354,224B) 0x4049D2: NewFromPrototype (repeated_field.h:832)
+|       ->05.98% (19,354,224B) 0x4049D2: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1738)
+|         ->05.98% (19,354,224B) 0x4049D2: Add (repeated_field.h:2181)
+|           ->05.98% (19,354,224B) 0x4049D2: _internal_add_update (gNMI.pb.h:5526)
+|             ->05.98% (19,354,224B) 0x4049D2: add_update (gNMI.pb.h:5530)
+|               ->05.98% (19,354,224B) 0x4049D2: serializeDataIntoGetResp (proto_gnmi.c:47)
+|                 ->05.98% (19,354,224B) 0x404556: main (main.c:23)
+|                   
+->03.99% (12,902,784B) 0x408389: CreateMessageInternal<gnmi::TypedValue> (arena.h:501)
+| ->03.99% (12,902,784B) 0x408389: gnmi::TypedValue* google::protobuf::Arena::CreateMaybeMessage<gnmi::TypedValue>(google::protobuf::Arena*) (gNMI.pb.cc:8675)
+|   ->03.99% (12,902,784B) 0x404C46: CreateMaybeMessage<gnmi::TypedValue> (message_lite.h:450)
+|     ->03.99% (12,902,784B) 0x404C46: _internal_mutable_val (gNMI.pb.h:5815)
+|       ->03.99% (12,902,784B) 0x404C46: mutable_val (gNMI.pb.h:5822)
+|         ->03.99% (12,902,784B) 0x404C46: serializeDataIntoGetResp (proto_gnmi.c:50)
+|           ->03.99% (12,902,784B) 0x404556: main (main.c:23)
+|             
+->02.99% (9,677,184B) 0x416B19: CreateMessageInternal<gnmi::Notification> (arena.h:501)
+| ->02.99% (9,677,184B) 0x416B19: gnmi::Notification* google::protobuf::Arena::CreateMaybeMessage<gnmi::Notification>(google::protobuf::Arena*) (gNMI.pb.cc:8669)
+|   ->02.99% (9,677,184B) 0x404954: New (repeated_field.h:802)
+|     ->02.99% (9,677,184B) 0x404954: NewFromPrototype (repeated_field.h:832)
+|       ->02.99% (9,677,184B) 0x404954: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1738)
+|         ->02.99% (9,677,184B) 0x404954: Add (repeated_field.h:2181)
+|           ->02.99% (9,677,184B) 0x404954: _internal_add_notification (gNMI.pb.h:9784)
+|             ->02.99% (9,677,184B) 0x404954: add_notification (gNMI.pb.h:9788)
+|               ->02.99% (9,677,184B) 0x404954: serializeDataIntoGetResp (proto_gnmi.c:39)
+|                 ->02.99% (9,677,184B) 0x404556: main (main.c:23)
+|                   
+->02.24% (7,257,832B) 0x404ED9: CreateInternal<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:511)
+| ->02.24% (7,257,832B) 0x404ED9: DoCreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:561)
+|   ->02.24% (7,257,832B) 0x404ED9: CreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:568)
+|     ->02.24% (7,257,832B) 0x404ED9: CreateNoMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:587)
+|       ->02.24% (7,257,832B) 0x404ED9: Create<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:325)
+|         ->02.24% (7,257,832B) 0x404ED9: google::protobuf::internal::ArenaStringPtr::CreateInstance(google::protobuf::Arena*, std::string const*) (arenastring.h:373)
+|           ->02.24% (7,257,832B) in 4 places, all below massif's threshold (1.00%)
+|             
+->00.00% (10,960B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 16    601,562,619      339,607,992      276,551,125    63,056,867            0
+ 17    628,630,877      355,576,008      289,545,085    66,030,923            0
+ 18    669,233,252      379,528,040      309,036,025    70,492,015            0
+ 19    708,674,227      402,794,792      327,969,314    74,825,478            0
+ 20    738,879,625      422,596,920      344,473,846    78,123,074            0
+81.51% (344,473,846B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.85% (83,886,208B) 0x411599: CreateMessageInternal<gnmi::PathElem> (arena.h:501)
+| ->19.85% (83,886,208B) 0x411599: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|   ->15.88% (67,108,864B) 0x404A2A: New (repeated_field.h:802)
+|   | ->15.88% (67,108,864B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|   |   ->15.88% (67,108,864B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|   |     ->15.88% (67,108,864B) 0x404A2A: Add (repeated_field.h:2181)
+|   |       ->15.88% (67,108,864B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|   |         ->15.88% (67,108,864B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|   |           ->15.88% (67,108,864B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |             ->15.88% (67,108,864B) 0x404556: main (main.c:23)
+|   |               
+|   ->03.97% (16,777,216B) 0x4264AD: New (repeated_field.h:802)
+|   | ->03.97% (16,777,216B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|   |   ->03.97% (16,777,216B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|   |     ->03.97% (16,777,216B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|   |       ->03.97% (16,777,216B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|   |         ->03.97% (16,777,216B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|   |           ->03.97% (16,777,216B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|   |             ->03.97% (16,777,216B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|   |               ->03.97% (16,777,216B) 0x404556: main (main.c:23)
+|   |                 
+|   ->00.00% (128B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->13.65% (57,671,680B) 0x4101C9: CreateMessageInternal<gnmi::Path> (arena.h:501)
+| ->13.65% (57,671,680B) 0x4101C9: gnmi::Path* google::protobuf::Arena::CreateMaybeMessage<gnmi::Path>(google::protobuf::Arena*) (gNMI.pb.cc:8678)
+|   ->10.92% (46,137,344B) 0x404B9E: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|   | ->10.92% (46,137,344B) 0x404B9E: _internal_mutable_path (gNMI.pb.h:5653)
+|   |   ->10.92% (46,137,344B) 0x404B9E: mutable_path (gNMI.pb.h:5660)
+|   |     ->10.92% (46,137,344B) 0x404B9E: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |       ->10.92% (46,137,344B) 0x404556: main (main.c:23)
+|   |         
+|   ->02.73% (11,534,336B) 0x404CA6: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|     ->02.73% (11,534,336B) 0x404CA6: _internal_mutable_prefix (gNMI.pb.h:5389)
+|       ->02.73% (11,534,336B) 0x404CA6: mutable_prefix (gNMI.pb.h:5396)
+|         ->02.73% (11,534,336B) 0x404CA6: serializeDataIntoGetResp (proto_gnmi.c:43)
+|           ->02.73% (11,534,336B) 0x404556: main (main.c:23)
+|             
+->09.93% (41,943,168B) 0x425457: allocate (map.h:112)
+| ->09.93% (41,943,168B) 0x425457: Alloc<void*> (map.h:955)
+|   ->09.93% (41,943,168B) 0x425457: google::protobuf::Map<std::string, std::string>::InnerMap::CreateEmptyTable(unsigned long) (map.h:979)
+|     ->09.93% (41,943,168B) 0x411499: InnerMap (map.h:386)
+|       ->09.93% (41,943,168B) 0x411499: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+|         ->09.93% (41,943,168B) 0x411499: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|           ->09.93% (41,943,168B) 0x411499: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|             ->09.93% (41,943,168B) 0x411499: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|               ->09.93% (41,943,168B) 0x411499: Init (map.h:315)
+|                 ->09.93% (41,943,168B) 0x411499: Map (map.h:274)
+|                   ->09.93% (41,943,168B) 0x411499: MapFieldLite (map_field_lite.h:68)
+|                     ->09.93% (41,943,168B) 0x411499: MapField (map_field.h:455)
+|                       ->09.93% (41,943,168B) 0x411499: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                         ->09.93% (41,943,104B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                         | ->09.93% (41,943,104B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                         |   ->07.94% (33,554,432B) 0x404A2A: New (repeated_field.h:802)
+|                         |   | ->07.94% (33,554,432B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->07.94% (33,554,432B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                         |   |     ->07.94% (33,554,432B) 0x404A2A: Add (repeated_field.h:2181)
+|                         |   |       ->07.94% (33,554,432B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                         |   |         ->07.94% (33,554,432B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                         |   |           ->07.94% (33,554,432B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                         |   |             ->07.94% (33,554,432B) 0x404556: main (main.c:23)
+|                         |   |               
+|                         |   ->01.99% (8,388,608B) 0x4264AD: New (repeated_field.h:802)
+|                         |   | ->01.99% (8,388,608B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->01.99% (8,388,608B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                         |   |     ->01.99% (8,388,608B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                         |   |       ->01.99% (8,388,608B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                         |   |         ->01.99% (8,388,608B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                         |   |           ->01.99% (8,388,608B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                         |   |             ->01.99% (8,388,608B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                         |   |               ->01.99% (8,388,608B) 0x404556: main (main.c:23)
+|                         |   |                 
+|                         |   ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         |   
+|                         ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         
+->08.19% (34,603,064B) 0x4F29998: google::protobuf::internal::RepeatedPtrFieldBase::InternalExtend(int) (repeated_field.cc:66)
+| ->04.96% (20,971,520B) 0x404BC7: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1734)
+| | ->04.96% (20,971,520B) 0x404BC7: Add (repeated_field.h:2181)
+| |   ->04.96% (20,971,520B) 0x404BC7: _internal_add_elem (gNMI.pb.h:7164)
+| |     ->04.96% (20,971,520B) 0x404BC7: add_elem (gNMI.pb.h:7168)
+| |       ->04.96% (20,971,520B) 0x404BC7: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |         ->04.96% (20,971,520B) 0x404556: main (main.c:23)
+| |           
+| ->01.24% (5,242,880B) 0x404BE6: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1734)
+| | ->01.24% (5,242,880B) 0x404BE6: Add (repeated_field.h:2181)
+| |   ->01.24% (5,242,880B) 0x404BE6: _internal_add_update (gNMI.pb.h:5526)
+| |     ->01.24% (5,242,880B) 0x404BE6: add_update (gNMI.pb.h:5530)
+| |       ->01.24% (5,242,880B) 0x404BE6: serializeDataIntoGetResp (proto_gnmi.c:47)
+| |         ->01.24% (5,242,880B) 0x404556: main (main.c:23)
+| |           
+| ->01.24% (5,242,880B) 0x413762: MergeFromInternal (repeated_field.h:1799)
+| | ->01.24% (5,242,880B) 0x413762: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+| |   ->01.24% (5,242,880B) 0x413762: MergeFrom (repeated_field.h:2287)
+| |     ->01.24% (5,242,880B) 0x413762: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+| |       ->01.24% (5,242,880B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+| |         ->01.24% (5,242,880B) 0x404556: main (main.c:23)
+| |           
+| ->00.74% (3,145,784B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->07.44% (31,457,376B) 0x411460: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+| ->07.44% (31,457,376B) 0x411460: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|   ->07.44% (31,457,376B) 0x411460: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|     ->07.44% (31,457,376B) 0x411460: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|       ->07.44% (31,457,376B) 0x411460: Init (map.h:315)
+|         ->07.44% (31,457,376B) 0x411460: Map (map.h:274)
+|           ->07.44% (31,457,376B) 0x411460: MapFieldLite (map_field_lite.h:68)
+|             ->07.44% (31,457,376B) 0x411460: MapField (map_field.h:455)
+|               ->07.44% (31,457,376B) 0x411460: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                 ->07.44% (31,457,328B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                 | ->07.44% (31,457,328B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                 |   ->05.96% (25,165,824B) 0x404A2A: New (repeated_field.h:802)
+|                 |   | ->05.96% (25,165,824B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->05.96% (25,165,824B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                 |   |     ->05.96% (25,165,824B) 0x404A2A: Add (repeated_field.h:2181)
+|                 |   |       ->05.96% (25,165,824B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                 |   |         ->05.96% (25,165,824B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                 |   |           ->05.96% (25,165,824B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                 |   |             ->05.96% (25,165,824B) 0x404556: main (main.c:23)
+|                 |   |               
+|                 |   ->01.49% (6,291,456B) 0x4264AD: New (repeated_field.h:802)
+|                 |   | ->01.49% (6,291,456B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->01.49% (6,291,456B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                 |   |     ->01.49% (6,291,456B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                 |   |       ->01.49% (6,291,456B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                 |   |         ->01.49% (6,291,456B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                 |   |           ->01.49% (6,291,456B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                 |   |             ->01.49% (6,291,456B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                 |   |               ->01.49% (6,291,456B) 0x404556: main (main.c:23)
+|                 |   |                 
+|                 |   ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 |   
+|                 ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->07.32% (30,938,246B) 0x640DCD8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| ->07.32% (30,933,530B) 0x640F560: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.19)
+| | ->07.32% (30,933,530B) 0x640F997: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| |   ->03.97% (16,777,216B) 0x404AEA: set_string_val (gNMI.pb.h:5926)
+| |   | ->03.97% (16,777,216B) 0x404AEA: serializeDataIntoGetResp (proto_gnmi.c:50)
+| |   |   ->03.97% (16,777,216B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->03.35% (14,155,776B) 0x404A67: set_name (gNMI.pb.h:7296)
+| |   | ->03.35% (14,155,776B) 0x404A67: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |   |   ->03.35% (14,155,776B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->00.00% (538B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.00% (4,716B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.96% (25,165,824B) 0x408289: CreateMessageInternal<gnmi::Update> (arena.h:501)
+| ->05.96% (25,165,824B) 0x408289: gnmi::Update* google::protobuf::Arena::CreateMaybeMessage<gnmi::Update>(google::protobuf::Arena*) (gNMI.pb.cc:8672)
+|   ->05.96% (25,165,824B) 0x4049D2: New (repeated_field.h:802)
+|     ->05.96% (25,165,824B) 0x4049D2: NewFromPrototype (repeated_field.h:832)
+|       ->05.96% (25,165,824B) 0x4049D2: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1738)
+|         ->05.96% (25,165,824B) 0x4049D2: Add (repeated_field.h:2181)
+|           ->05.96% (25,165,824B) 0x4049D2: _internal_add_update (gNMI.pb.h:5526)
+|             ->05.96% (25,165,824B) 0x4049D2: add_update (gNMI.pb.h:5530)
+|               ->05.96% (25,165,824B) 0x4049D2: serializeDataIntoGetResp (proto_gnmi.c:47)
+|                 ->05.96% (25,165,824B) 0x404556: main (main.c:23)
+|                   
+->03.97% (16,777,216B) 0x408389: CreateMessageInternal<gnmi::TypedValue> (arena.h:501)
+| ->03.97% (16,777,216B) 0x408389: gnmi::TypedValue* google::protobuf::Arena::CreateMaybeMessage<gnmi::TypedValue>(google::protobuf::Arena*) (gNMI.pb.cc:8675)
+|   ->03.97% (16,777,216B) 0x404C46: CreateMaybeMessage<gnmi::TypedValue> (message_lite.h:450)
+|     ->03.97% (16,777,216B) 0x404C46: _internal_mutable_val (gNMI.pb.h:5815)
+|       ->03.97% (16,777,216B) 0x404C46: mutable_val (gNMI.pb.h:5822)
+|         ->03.97% (16,777,216B) 0x404C46: serializeDataIntoGetResp (proto_gnmi.c:50)
+|           ->03.97% (16,777,216B) 0x404556: main (main.c:23)
+|             
+->02.98% (12,582,912B) 0x416B19: CreateMessageInternal<gnmi::Notification> (arena.h:501)
+| ->02.98% (12,582,912B) 0x416B19: gnmi::Notification* google::protobuf::Arena::CreateMaybeMessage<gnmi::Notification>(google::protobuf::Arena*) (gNMI.pb.cc:8669)
+|   ->02.98% (12,582,912B) 0x404954: New (repeated_field.h:802)
+|     ->02.98% (12,582,912B) 0x404954: NewFromPrototype (repeated_field.h:832)
+|       ->02.98% (12,582,912B) 0x404954: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1738)
+|         ->02.98% (12,582,912B) 0x404954: Add (repeated_field.h:2181)
+|           ->02.98% (12,582,912B) 0x404954: _internal_add_notification (gNMI.pb.h:9784)
+|             ->02.98% (12,582,912B) 0x404954: add_notification (gNMI.pb.h:9788)
+|               ->02.98% (12,582,912B) 0x404954: serializeDataIntoGetResp (proto_gnmi.c:39)
+|                 ->02.98% (12,582,912B) 0x404556: main (main.c:23)
+|                   
+->02.23% (9,437,192B) 0x404ED9: CreateInternal<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:511)
+| ->02.23% (9,437,192B) 0x404ED9: DoCreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:561)
+|   ->02.23% (9,437,192B) 0x404ED9: CreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:568)
+|     ->02.23% (9,437,192B) 0x404ED9: CreateNoMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:587)
+|       ->02.23% (9,437,192B) 0x404ED9: Create<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:325)
+|         ->02.23% (9,437,192B) 0x404ED9: google::protobuf::internal::ArenaStringPtr::CreateInstance(google::protobuf::Arena*, std::string const*) (arenastring.h:373)
+|           ->02.23% (9,437,192B) in 4 places, all below massif's threshold (1.00%)
+|             
+->00.00% (10,960B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 21    764,786,546      436,831,408      355,861,886    80,969,522            0
+ 22    799,328,990      457,208,496      372,443,707    84,764,789            0
+ 23    833,871,493      477,585,720      389,025,640    88,560,080            0
+ 24    859,778,362      492,868,672      401,462,128    91,406,544            0
+ 25    894,320,820      513,245,776      418,043,965    95,201,811            0
+ 26    928,863,322      533,623,152      434,626,082    98,997,070            0
+ 27    954,770,249      548,905,904      447,062,370   101,843,534            0
+ 28    989,312,860      569,283,224      463,644,354   105,638,870            0
+ 29  1,015,219,759      584,566,136      476,080,826   108,485,310            0
+ 30  1,049,762,260      604,943,360      492,662,759   112,280,601            0
+ 31  1,075,669,129      620,226,280      505,099,247   115,127,033            0
+ 32  1,110,211,589      640,603,416      521,681,084   118,922,332            0
+ 33  1,146,532,927      662,029,968      539,116,945   122,913,023            0
+ 34  1,194,961,244      690,598,760      562,364,774   128,233,986            0
+81.43% (562,364,774B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.94% (137,696,256B) 0x411599: CreateMessageInternal<gnmi::PathElem> (arena.h:501)
+| ->19.94% (137,696,256B) 0x411599: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|   ->15.95% (110,156,800B) 0x404A2A: New (repeated_field.h:802)
+|   | ->15.95% (110,156,800B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|   |   ->15.95% (110,156,800B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|   |     ->15.95% (110,156,800B) 0x404A2A: Add (repeated_field.h:2181)
+|   |       ->15.95% (110,156,800B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|   |         ->15.95% (110,156,800B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|   |           ->15.95% (110,156,800B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |             ->15.95% (110,156,800B) 0x404556: main (main.c:23)
+|   |               
+|   ->03.99% (27,539,328B) 0x4264AD: New (repeated_field.h:802)
+|   | ->03.99% (27,539,328B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|   |   ->03.99% (27,539,328B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|   |     ->03.99% (27,539,328B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|   |       ->03.99% (27,539,328B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|   |         ->03.99% (27,539,328B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|   |           ->03.99% (27,539,328B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|   |             ->03.99% (27,539,328B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|   |               ->03.99% (27,539,328B) 0x404556: main (main.c:23)
+|   |                 
+|   ->00.00% (128B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->13.71% (94,666,088B) 0x4101C9: CreateMessageInternal<gnmi::Path> (arena.h:501)
+| ->13.71% (94,666,088B) 0x4101C9: gnmi::Path* google::protobuf::Arena::CreateMaybeMessage<gnmi::Path>(google::protobuf::Arena*) (gNMI.pb.cc:8678)
+|   ->10.97% (75,732,800B) 0x404B9E: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|   | ->10.97% (75,732,800B) 0x404B9E: _internal_mutable_path (gNMI.pb.h:5653)
+|   |   ->10.97% (75,732,800B) 0x404B9E: mutable_path (gNMI.pb.h:5660)
+|   |     ->10.97% (75,732,800B) 0x404B9E: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |       ->10.97% (75,732,800B) 0x404556: main (main.c:23)
+|   |         
+|   ->02.74% (18,933,288B) 0x404CA6: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|     ->02.74% (18,933,288B) 0x404CA6: _internal_mutable_prefix (gNMI.pb.h:5389)
+|       ->02.74% (18,933,288B) 0x404CA6: mutable_prefix (gNMI.pb.h:5396)
+|         ->02.74% (18,933,288B) 0x404CA6: serializeDataIntoGetResp (proto_gnmi.c:43)
+|           ->02.74% (18,933,288B) 0x404556: main (main.c:23)
+|             
+->09.97% (68,848,128B) 0x425457: allocate (map.h:112)
+| ->09.97% (68,848,128B) 0x425457: Alloc<void*> (map.h:955)
+|   ->09.97% (68,848,128B) 0x425457: google::protobuf::Map<std::string, std::string>::InnerMap::CreateEmptyTable(unsigned long) (map.h:979)
+|     ->09.97% (68,848,128B) 0x411499: InnerMap (map.h:386)
+|       ->09.97% (68,848,128B) 0x411499: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+|         ->09.97% (68,848,128B) 0x411499: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|           ->09.97% (68,848,128B) 0x411499: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|             ->09.97% (68,848,128B) 0x411499: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|               ->09.97% (68,848,128B) 0x411499: Init (map.h:315)
+|                 ->09.97% (68,848,128B) 0x411499: Map (map.h:274)
+|                   ->09.97% (68,848,128B) 0x411499: MapFieldLite (map_field_lite.h:68)
+|                     ->09.97% (68,848,128B) 0x411499: MapField (map_field.h:455)
+|                       ->09.97% (68,848,128B) 0x411499: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                         ->09.97% (68,848,064B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                         | ->09.97% (68,848,064B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                         |   ->07.98% (55,078,400B) 0x404A2A: New (repeated_field.h:802)
+|                         |   | ->07.98% (55,078,400B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->07.98% (55,078,400B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                         |   |     ->07.98% (55,078,400B) 0x404A2A: Add (repeated_field.h:2181)
+|                         |   |       ->07.98% (55,078,400B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                         |   |         ->07.98% (55,078,400B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                         |   |           ->07.98% (55,078,400B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                         |   |             ->07.98% (55,078,400B) 0x404556: main (main.c:23)
+|                         |   |               
+|                         |   ->01.99% (13,769,600B) 0x4264AD: New (repeated_field.h:802)
+|                         |   | ->01.99% (13,769,600B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->01.99% (13,769,600B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                         |   |     ->01.99% (13,769,600B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                         |   |       ->01.99% (13,769,600B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                         |   |         ->01.99% (13,769,600B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                         |   |           ->01.99% (13,769,600B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                         |   |             ->01.99% (13,769,600B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                         |   |               ->01.99% (13,769,600B) 0x404556: main (main.c:23)
+|                         |   |                 
+|                         |   ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         |   
+|                         ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         
+->07.78% (53,733,240B) 0x4F29998: google::protobuf::internal::RepeatedPtrFieldBase::InternalExtend(int) (repeated_field.cc:66)
+| ->04.98% (34,424,000B) 0x404BC7: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1734)
+| | ->04.98% (34,424,000B) 0x404BC7: Add (repeated_field.h:2181)
+| |   ->04.98% (34,424,000B) 0x404BC7: _internal_add_elem (gNMI.pb.h:7164)
+| |     ->04.98% (34,424,000B) 0x404BC7: add_elem (gNMI.pb.h:7168)
+| |       ->04.98% (34,424,000B) 0x404BC7: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |         ->04.98% (34,424,000B) 0x404556: main (main.c:23)
+| |           
+| ->01.25% (8,606,040B) 0x413762: MergeFromInternal (repeated_field.h:1799)
+| | ->01.25% (8,606,040B) 0x413762: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+| |   ->01.25% (8,606,040B) 0x413762: MergeFrom (repeated_field.h:2287)
+| |     ->01.25% (8,606,040B) 0x413762: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+| |       ->01.25% (8,606,040B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+| |         ->01.25% (8,606,040B) 0x404556: main (main.c:23)
+| |           
+| ->01.25% (8,606,000B) 0x404BE6: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1734)
+| | ->01.25% (8,606,000B) 0x404BE6: Add (repeated_field.h:2181)
+| |   ->01.25% (8,606,000B) 0x404BE6: _internal_add_update (gNMI.pb.h:5526)
+| |     ->01.25% (8,606,000B) 0x404BE6: add_update (gNMI.pb.h:5530)
+| |       ->01.25% (8,606,000B) 0x404BE6: serializeDataIntoGetResp (proto_gnmi.c:47)
+| |         ->01.25% (8,606,000B) 0x404556: main (main.c:23)
+| |           
+| ->00.30% (2,097,200B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->07.48% (51,636,144B) 0x411460: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+| ->07.48% (51,636,144B) 0x411460: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|   ->07.48% (51,636,144B) 0x411460: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|     ->07.48% (51,636,144B) 0x411460: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|       ->07.48% (51,636,144B) 0x411460: Init (map.h:315)
+|         ->07.48% (51,636,144B) 0x411460: Map (map.h:274)
+|           ->07.48% (51,636,144B) 0x411460: MapFieldLite (map_field_lite.h:68)
+|             ->07.48% (51,636,144B) 0x411460: MapField (map_field.h:455)
+|               ->07.48% (51,636,144B) 0x411460: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                 ->07.48% (51,636,096B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                 | ->07.48% (51,636,096B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                 |   ->05.98% (41,308,800B) 0x404A2A: New (repeated_field.h:802)
+|                 |   | ->05.98% (41,308,800B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->05.98% (41,308,800B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                 |   |     ->05.98% (41,308,800B) 0x404A2A: Add (repeated_field.h:2181)
+|                 |   |       ->05.98% (41,308,800B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                 |   |         ->05.98% (41,308,800B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                 |   |           ->05.98% (41,308,800B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                 |   |             ->05.98% (41,308,800B) 0x404556: main (main.c:23)
+|                 |   |               
+|                 |   ->01.50% (10,327,248B) 0x4264AD: New (repeated_field.h:802)
+|                 |   | ->01.50% (10,327,248B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->01.50% (10,327,248B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                 |   |     ->01.50% (10,327,248B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                 |   |       ->01.50% (10,327,248B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                 |   |         ->01.50% (10,327,248B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                 |   |           ->01.50% (10,327,248B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                 |   |             ->01.50% (10,327,248B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                 |   |               ->01.50% (10,327,248B) 0x404556: main (main.c:23)
+|                 |   |                 
+|                 |   ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 |   
+|                 ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->07.35% (50,780,654B) 0x640DCD8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| ->07.35% (50,775,938B) 0x640F560: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.19)
+| | ->07.35% (50,775,938B) 0x640F997: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| |   ->03.99% (27,539,200B) 0x404AEA: set_string_val (gNMI.pb.h:5926)
+| |   | ->03.99% (27,539,200B) 0x404AEA: serializeDataIntoGetResp (proto_gnmi.c:50)
+| |   |   ->03.99% (27,539,200B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->03.36% (23,236,200B) 0x404A67: set_name (gNMI.pb.h:7296)
+| |   | ->03.36% (23,236,200B) 0x404A67: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |   |   ->03.36% (23,236,200B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->00.00% (538B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.00% (4,716B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.98% (41,308,800B) 0x408289: CreateMessageInternal<gnmi::Update> (arena.h:501)
+| ->05.98% (41,308,800B) 0x408289: gnmi::Update* google::protobuf::Arena::CreateMaybeMessage<gnmi::Update>(google::protobuf::Arena*) (gNMI.pb.cc:8672)
+|   ->05.98% (41,308,800B) 0x4049D2: New (repeated_field.h:802)
+|     ->05.98% (41,308,800B) 0x4049D2: NewFromPrototype (repeated_field.h:832)
+|       ->05.98% (41,308,800B) 0x4049D2: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1738)
+|         ->05.98% (41,308,800B) 0x4049D2: Add (repeated_field.h:2181)
+|           ->05.98% (41,308,800B) 0x4049D2: _internal_add_update (gNMI.pb.h:5526)
+|             ->05.98% (41,308,800B) 0x4049D2: add_update (gNMI.pb.h:5530)
+|               ->05.98% (41,308,800B) 0x4049D2: serializeDataIntoGetResp (proto_gnmi.c:47)
+|                 ->05.98% (41,308,800B) 0x404556: main (main.c:23)
+|                   
+->03.99% (27,539,200B) 0x408389: CreateMessageInternal<gnmi::TypedValue> (arena.h:501)
+| ->03.99% (27,539,200B) 0x408389: gnmi::TypedValue* google::protobuf::Arena::CreateMaybeMessage<gnmi::TypedValue>(google::protobuf::Arena*) (gNMI.pb.cc:8675)
+|   ->03.99% (27,539,200B) 0x404C46: CreateMaybeMessage<gnmi::TypedValue> (message_lite.h:450)
+|     ->03.99% (27,539,200B) 0x404C46: _internal_mutable_val (gNMI.pb.h:5815)
+|       ->03.99% (27,539,200B) 0x404C46: mutable_val (gNMI.pb.h:5822)
+|         ->03.99% (27,539,200B) 0x404C46: serializeDataIntoGetResp (proto_gnmi.c:50)
+|           ->03.99% (27,539,200B) 0x404556: main (main.c:23)
+|             
+->02.99% (20,654,496B) 0x416B19: CreateMessageInternal<gnmi::Notification> (arena.h:501)
+| ->02.99% (20,654,496B) 0x416B19: gnmi::Notification* google::protobuf::Arena::CreateMaybeMessage<gnmi::Notification>(google::protobuf::Arena*) (gNMI.pb.cc:8669)
+|   ->02.99% (20,654,496B) 0x404954: New (repeated_field.h:802)
+|     ->02.99% (20,654,496B) 0x404954: NewFromPrototype (repeated_field.h:832)
+|       ->02.99% (20,654,496B) 0x404954: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1738)
+|         ->02.99% (20,654,496B) 0x404954: Add (repeated_field.h:2181)
+|           ->02.99% (20,654,496B) 0x404954: _internal_add_notification (gNMI.pb.h:9784)
+|             ->02.99% (20,654,496B) 0x404954: add_notification (gNMI.pb.h:9788)
+|               ->02.99% (20,654,496B) 0x404954: serializeDataIntoGetResp (proto_gnmi.c:39)
+|                 ->02.99% (20,654,496B) 0x404556: main (main.c:23)
+|                   
+->02.24% (15,490,808B) 0x404ED9: CreateInternal<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:511)
+| ->02.24% (15,490,808B) 0x404ED9: DoCreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:561)
+|   ->02.24% (15,490,808B) 0x404ED9: CreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:568)
+|     ->02.24% (15,490,808B) 0x404ED9: CreateNoMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:587)
+|       ->02.24% (15,490,808B) 0x404ED9: Create<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:325)
+|         ->02.24% (15,490,808B) 0x404ED9: google::protobuf::internal::ArenaStringPtr::CreateInstance(google::protobuf::Arena*, std::string const*) (arenastring.h:373)
+|           ->02.24% (15,490,808B) in 4 places, all below massif's threshold (1.00%)
+|             
+->00.00% (10,960B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 35  1,219,175,524      704,883,128      573,988,622   130,894,506            0
+ 36  1,255,496,860      726,309,680      591,424,483   134,885,197            0
+ 37  1,291,818,202      747,736,264      608,860,344   138,875,920            0
+ 38  1,328,139,548      769,162,880      626,296,205   142,866,675            0
+ 39  1,376,568,000      797,731,648      649,544,042   148,187,606            0
+ 40  1,699,260,462      802,118,464      653,113,774   149,004,690            0
+81.42% (653,113,774B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.95% (160,000,128B) 0x411599: CreateMessageInternal<gnmi::PathElem> (arena.h:501)
+| ->19.95% (160,000,128B) 0x411599: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|   ->15.96% (128,000,000B) 0x404A2A: New (repeated_field.h:802)
+|   | ->15.96% (128,000,000B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|   |   ->15.96% (128,000,000B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|   |     ->15.96% (128,000,000B) 0x404A2A: Add (repeated_field.h:2181)
+|   |       ->15.96% (128,000,000B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|   |         ->15.96% (128,000,000B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|   |           ->15.96% (128,000,000B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |             ->15.96% (128,000,000B) 0x404556: main (main.c:23)
+|   |               
+|   ->03.99% (32,000,000B) 0x4264AD: New (repeated_field.h:802)
+|   | ->03.99% (32,000,000B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|   |   ->03.99% (32,000,000B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|   |     ->03.99% (32,000,000B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|   |       ->03.99% (32,000,000B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|   |         ->03.99% (32,000,000B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|   |           ->03.99% (32,000,000B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|   |             ->03.99% (32,000,000B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|   |               ->03.99% (32,000,000B) 0x404556: main (main.c:23)
+|   |                 
+|   ->00.00% (128B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->13.71% (110,000,000B) 0x4101C9: CreateMessageInternal<gnmi::Path> (arena.h:501)
+| ->13.71% (110,000,000B) 0x4101C9: gnmi::Path* google::protobuf::Arena::CreateMaybeMessage<gnmi::Path>(google::protobuf::Arena*) (gNMI.pb.cc:8678)
+|   ->10.97% (88,000,000B) 0x404B9E: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|   | ->10.97% (88,000,000B) 0x404B9E: _internal_mutable_path (gNMI.pb.h:5653)
+|   |   ->10.97% (88,000,000B) 0x404B9E: mutable_path (gNMI.pb.h:5660)
+|   |     ->10.97% (88,000,000B) 0x404B9E: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |       ->10.97% (88,000,000B) 0x404556: main (main.c:23)
+|   |         
+|   ->02.74% (22,000,000B) 0x404CA6: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|     ->02.74% (22,000,000B) 0x404CA6: _internal_mutable_prefix (gNMI.pb.h:5389)
+|       ->02.74% (22,000,000B) 0x404CA6: mutable_prefix (gNMI.pb.h:5396)
+|         ->02.74% (22,000,000B) 0x404CA6: serializeDataIntoGetResp (proto_gnmi.c:43)
+|           ->02.74% (22,000,000B) 0x404556: main (main.c:23)
+|             
+->09.97% (80,000,128B) 0x425457: allocate (map.h:112)
+| ->09.97% (80,000,128B) 0x425457: Alloc<void*> (map.h:955)
+|   ->09.97% (80,000,128B) 0x425457: google::protobuf::Map<std::string, std::string>::InnerMap::CreateEmptyTable(unsigned long) (map.h:979)
+|     ->09.97% (80,000,128B) 0x411499: InnerMap (map.h:386)
+|       ->09.97% (80,000,128B) 0x411499: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+|         ->09.97% (80,000,128B) 0x411499: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|           ->09.97% (80,000,128B) 0x411499: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|             ->09.97% (80,000,128B) 0x411499: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|               ->09.97% (80,000,128B) 0x411499: Init (map.h:315)
+|                 ->09.97% (80,000,128B) 0x411499: Map (map.h:274)
+|                   ->09.97% (80,000,128B) 0x411499: MapFieldLite (map_field_lite.h:68)
+|                     ->09.97% (80,000,128B) 0x411499: MapField (map_field.h:455)
+|                       ->09.97% (80,000,128B) 0x411499: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                         ->09.97% (80,000,064B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                         | ->09.97% (80,000,064B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                         |   ->07.98% (64,000,000B) 0x404A2A: New (repeated_field.h:802)
+|                         |   | ->07.98% (64,000,000B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->07.98% (64,000,000B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                         |   |     ->07.98% (64,000,000B) 0x404A2A: Add (repeated_field.h:2181)
+|                         |   |       ->07.98% (64,000,000B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                         |   |         ->07.98% (64,000,000B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                         |   |           ->07.98% (64,000,000B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                         |   |             ->07.98% (64,000,000B) 0x404556: main (main.c:23)
+|                         |   |               
+|                         |   ->01.99% (16,000,000B) 0x4264AD: New (repeated_field.h:802)
+|                         |   | ->01.99% (16,000,000B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->01.99% (16,000,000B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                         |   |     ->01.99% (16,000,000B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                         |   |       ->01.99% (16,000,000B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                         |   |         ->01.99% (16,000,000B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                         |   |           ->01.99% (16,000,000B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                         |   |             ->01.99% (16,000,000B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                         |   |               ->01.99% (16,000,000B) 0x404556: main (main.c:23)
+|                         |   |                 
+|                         |   ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         |   
+|                         ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         
+->07.74% (62,097,200B) 0x4F29998: google::protobuf::internal::RepeatedPtrFieldBase::InternalExtend(int) (repeated_field.cc:66)
+| ->04.99% (40,000,000B) 0x404BC7: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1734)
+| | ->04.99% (40,000,000B) 0x404BC7: Add (repeated_field.h:2181)
+| |   ->04.99% (40,000,000B) 0x404BC7: _internal_add_elem (gNMI.pb.h:7164)
+| |     ->04.99% (40,000,000B) 0x404BC7: add_elem (gNMI.pb.h:7168)
+| |       ->04.99% (40,000,000B) 0x404BC7: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |         ->04.99% (40,000,000B) 0x404556: main (main.c:23)
+| |           
+| ->01.25% (10,000,000B) 0x404BE6: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1734)
+| | ->01.25% (10,000,000B) 0x404BE6: Add (repeated_field.h:2181)
+| |   ->01.25% (10,000,000B) 0x404BE6: _internal_add_update (gNMI.pb.h:5526)
+| |     ->01.25% (10,000,000B) 0x404BE6: add_update (gNMI.pb.h:5530)
+| |       ->01.25% (10,000,000B) 0x404BE6: serializeDataIntoGetResp (proto_gnmi.c:47)
+| |         ->01.25% (10,000,000B) 0x404556: main (main.c:23)
+| |           
+| ->01.25% (10,000,000B) 0x413762: MergeFromInternal (repeated_field.h:1799)
+| | ->01.25% (10,000,000B) 0x413762: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+| |   ->01.25% (10,000,000B) 0x413762: MergeFrom (repeated_field.h:2287)
+| |     ->01.25% (10,000,000B) 0x413762: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+| |       ->01.25% (10,000,000B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+| |         ->01.25% (10,000,000B) 0x404556: main (main.c:23)
+| |           
+| ->00.26% (2,097,200B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->07.48% (60,000,096B) 0x411460: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+| ->07.48% (60,000,096B) 0x411460: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|   ->07.48% (60,000,096B) 0x411460: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|     ->07.48% (60,000,096B) 0x411460: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|       ->07.48% (60,000,096B) 0x411460: Init (map.h:315)
+|         ->07.48% (60,000,096B) 0x411460: Map (map.h:274)
+|           ->07.48% (60,000,096B) 0x411460: MapFieldLite (map_field_lite.h:68)
+|             ->07.48% (60,000,096B) 0x411460: MapField (map_field.h:455)
+|               ->07.48% (60,000,096B) 0x411460: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                 ->07.48% (60,000,048B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                 | ->07.48% (60,000,048B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                 |   ->05.98% (48,000,000B) 0x404A2A: New (repeated_field.h:802)
+|                 |   | ->05.98% (48,000,000B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->05.98% (48,000,000B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                 |   |     ->05.98% (48,000,000B) 0x404A2A: Add (repeated_field.h:2181)
+|                 |   |       ->05.98% (48,000,000B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                 |   |         ->05.98% (48,000,000B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                 |   |           ->05.98% (48,000,000B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                 |   |             ->05.98% (48,000,000B) 0x404556: main (main.c:23)
+|                 |   |               
+|                 |   ->01.50% (12,000,000B) 0x4264AD: New (repeated_field.h:802)
+|                 |   | ->01.50% (12,000,000B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->01.50% (12,000,000B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                 |   |     ->01.50% (12,000,000B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                 |   |       ->01.50% (12,000,000B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                 |   |         ->01.50% (12,000,000B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                 |   |           ->01.50% (12,000,000B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                 |   |             ->01.50% (12,000,000B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                 |   |               ->01.50% (12,000,000B) 0x404556: main (main.c:23)
+|                 |   |                 
+|                 |   ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 |   
+|                 ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->07.36% (59,005,254B) 0x640DCD8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| ->07.36% (59,000,538B) 0x640F560: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.19)
+| | ->07.36% (59,000,538B) 0x640F997: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| |   ->03.99% (32,000,000B) 0x404AEA: set_string_val (gNMI.pb.h:5926)
+| |   | ->03.99% (32,000,000B) 0x404AEA: serializeDataIntoGetResp (proto_gnmi.c:50)
+| |   |   ->03.99% (32,000,000B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->03.37% (27,000,000B) 0x404A67: set_name (gNMI.pb.h:7296)
+| |   | ->03.37% (27,000,000B) 0x404A67: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |   |   ->03.37% (27,000,000B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->00.00% (538B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.00% (4,716B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.98% (48,000,000B) 0x408289: CreateMessageInternal<gnmi::Update> (arena.h:501)
+| ->05.98% (48,000,000B) 0x408289: gnmi::Update* google::protobuf::Arena::CreateMaybeMessage<gnmi::Update>(google::protobuf::Arena*) (gNMI.pb.cc:8672)
+|   ->05.98% (48,000,000B) 0x4049D2: New (repeated_field.h:802)
+|     ->05.98% (48,000,000B) 0x4049D2: NewFromPrototype (repeated_field.h:832)
+|       ->05.98% (48,000,000B) 0x4049D2: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1738)
+|         ->05.98% (48,000,000B) 0x4049D2: Add (repeated_field.h:2181)
+|           ->05.98% (48,000,000B) 0x4049D2: _internal_add_update (gNMI.pb.h:5526)
+|             ->05.98% (48,000,000B) 0x4049D2: add_update (gNMI.pb.h:5530)
+|               ->05.98% (48,000,000B) 0x4049D2: serializeDataIntoGetResp (proto_gnmi.c:47)
+|                 ->05.98% (48,000,000B) 0x404556: main (main.c:23)
+|                   
+->03.99% (32,000,000B) 0x408389: CreateMessageInternal<gnmi::TypedValue> (arena.h:501)
+| ->03.99% (32,000,000B) 0x408389: gnmi::TypedValue* google::protobuf::Arena::CreateMaybeMessage<gnmi::TypedValue>(google::protobuf::Arena*) (gNMI.pb.cc:8675)
+|   ->03.99% (32,000,000B) 0x404C46: CreateMaybeMessage<gnmi::TypedValue> (message_lite.h:450)
+|     ->03.99% (32,000,000B) 0x404C46: _internal_mutable_val (gNMI.pb.h:5815)
+|       ->03.99% (32,000,000B) 0x404C46: mutable_val (gNMI.pb.h:5822)
+|         ->03.99% (32,000,000B) 0x404C46: serializeDataIntoGetResp (proto_gnmi.c:50)
+|           ->03.99% (32,000,000B) 0x404556: main (main.c:23)
+|             
+->02.99% (24,000,000B) 0x416B19: CreateMessageInternal<gnmi::Notification> (arena.h:501)
+| ->02.99% (24,000,000B) 0x416B19: gnmi::Notification* google::protobuf::Arena::CreateMaybeMessage<gnmi::Notification>(google::protobuf::Arena*) (gNMI.pb.cc:8669)
+|   ->02.99% (24,000,000B) 0x404954: New (repeated_field.h:802)
+|     ->02.99% (24,000,000B) 0x404954: NewFromPrototype (repeated_field.h:832)
+|       ->02.99% (24,000,000B) 0x404954: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1738)
+|         ->02.99% (24,000,000B) 0x404954: Add (repeated_field.h:2181)
+|           ->02.99% (24,000,000B) 0x404954: _internal_add_notification (gNMI.pb.h:9784)
+|             ->02.99% (24,000,000B) 0x404954: add_notification (gNMI.pb.h:9788)
+|               ->02.99% (24,000,000B) 0x404954: serializeDataIntoGetResp (proto_gnmi.c:39)
+|                 ->02.99% (24,000,000B) 0x404556: main (main.c:23)
+|                   
+->02.24% (18,000,008B) 0x404ED9: CreateInternal<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:511)
+| ->02.24% (18,000,008B) 0x404ED9: DoCreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:561)
+|   ->02.24% (18,000,008B) 0x404ED9: CreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:568)
+|     ->02.24% (18,000,008B) 0x404ED9: CreateNoMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:587)
+|       ->02.24% (18,000,008B) 0x404ED9: Create<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:325)
+|         ->02.24% (18,000,008B) 0x404ED9: google::protobuf::internal::ArenaStringPtr::CreateInstance(google::protobuf::Arena*, std::string const*) (arenastring.h:373)
+|           ->02.24% (18,000,008B) in 4 places, all below massif's threshold (1.00%)
+|             
+->00.00% (10,960B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 41  1,723,474,727      781,268,760      636,147,428   145,121,332            0
+ 42  1,771,903,173      739,564,968      602,211,054   137,353,914            0
+ 43  1,796,117,445      718,712,984      585,242,758   133,470,226            0
+ 44  1,844,545,837      677,009,152      551,306,288   125,702,864            0
+ 45  1,880,867,215      645,731,336      525,854,034   119,877,302            0
+ 46  1,917,188,441      614,453,640      500,401,834   114,051,806            0
+ 47  1,965,616,833      572,749,808      466,465,364   106,284,444            0
+ 48  1,989,831,056      551,897,928      449,497,177   102,400,751            0
+ 49  2,026,152,326      520,620,128      424,044,910    96,575,218            0
+ 50  2,050,262,148      499,858,272      407,149,942    92,708,330            0
+ 51  2,074,372,124      479,096,208      390,254,835    88,841,373            0
+ 52  2,098,482,073      458,334,024      373,359,632    84,974,392            0
+81.46% (373,359,632B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.91% (91,243,264B) 0x411599: CreateMessageInternal<gnmi::PathElem> (arena.h:501)
+| ->19.91% (91,243,264B) 0x411599: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|   ->15.93% (72,994,688B) 0x404A2A: New (repeated_field.h:802)
+|   | ->15.93% (72,994,688B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|   |   ->15.93% (72,994,688B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|   |     ->15.93% (72,994,688B) 0x404A2A: Add (repeated_field.h:2181)
+|   |       ->15.93% (72,994,688B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|   |         ->15.93% (72,994,688B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|   |           ->15.93% (72,994,688B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |             ->15.93% (72,994,688B) 0x404556: main (main.c:23)
+|   |               
+|   ->03.98% (18,248,576B) 0x4264AD: New (repeated_field.h:802)
+|   | ->03.98% (18,248,576B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|   |   ->03.98% (18,248,576B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|   |     ->03.98% (18,248,576B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|   |       ->03.98% (18,248,576B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|   |         ->03.98% (18,248,576B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|   |           ->03.98% (18,248,576B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|   |             ->03.98% (18,248,576B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|   |               ->03.98% (18,248,576B) 0x404556: main (main.c:23)
+|   |                 
+|   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->13.69% (62,729,744B) 0x4101C9: CreateMessageInternal<gnmi::Path> (arena.h:501)
+| ->13.69% (62,729,744B) 0x4101C9: gnmi::Path* google::protobuf::Arena::CreateMaybeMessage<gnmi::Path>(google::protobuf::Arena*) (gNMI.pb.cc:8678)
+|   ->10.95% (50,183,848B) 0x404B9E: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|   | ->10.95% (50,183,848B) 0x404B9E: _internal_mutable_path (gNMI.pb.h:5653)
+|   |   ->10.95% (50,183,848B) 0x404B9E: mutable_path (gNMI.pb.h:5660)
+|   |     ->10.95% (50,183,848B) 0x404B9E: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |       ->10.95% (50,183,848B) 0x404556: main (main.c:23)
+|   |         
+|   ->02.74% (12,545,896B) 0x404CA6: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|     ->02.74% (12,545,896B) 0x404CA6: _internal_mutable_prefix (gNMI.pb.h:5389)
+|       ->02.74% (12,545,896B) 0x404CA6: mutable_prefix (gNMI.pb.h:5396)
+|         ->02.74% (12,545,896B) 0x404CA6: serializeDataIntoGetResp (proto_gnmi.c:43)
+|           ->02.74% (12,545,896B) 0x404556: main (main.c:23)
+|             
+->09.95% (45,621,696B) 0x425457: allocate (map.h:112)
+| ->09.95% (45,621,696B) 0x425457: Alloc<void*> (map.h:955)
+|   ->09.95% (45,621,696B) 0x425457: google::protobuf::Map<std::string, std::string>::InnerMap::CreateEmptyTable(unsigned long) (map.h:979)
+|     ->09.95% (45,621,696B) 0x411499: InnerMap (map.h:386)
+|       ->09.95% (45,621,696B) 0x411499: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+|         ->09.95% (45,621,696B) 0x411499: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|           ->09.95% (45,621,696B) 0x411499: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|             ->09.95% (45,621,696B) 0x411499: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|               ->09.95% (45,621,696B) 0x411499: Init (map.h:315)
+|                 ->09.95% (45,621,696B) 0x411499: Map (map.h:274)
+|                   ->09.95% (45,621,696B) 0x411499: MapFieldLite (map_field_lite.h:68)
+|                     ->09.95% (45,621,696B) 0x411499: MapField (map_field.h:455)
+|                       ->09.95% (45,621,696B) 0x411499: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                         ->09.95% (45,621,632B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                         | ->09.95% (45,621,632B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                         |   ->07.96% (36,497,344B) 0x404A2A: New (repeated_field.h:802)
+|                         |   | ->07.96% (36,497,344B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->07.96% (36,497,344B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                         |   |     ->07.96% (36,497,344B) 0x404A2A: Add (repeated_field.h:2181)
+|                         |   |       ->07.96% (36,497,344B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                         |   |         ->07.96% (36,497,344B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                         |   |           ->07.96% (36,497,344B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                         |   |             ->07.96% (36,497,344B) 0x404556: main (main.c:23)
+|                         |   |               
+|                         |   ->01.99% (9,124,288B) 0x4264AD: New (repeated_field.h:802)
+|                         |   | ->01.99% (9,124,288B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->01.99% (9,124,288B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                         |   |     ->01.99% (9,124,288B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                         |   |       ->01.99% (9,124,288B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                         |   |         ->01.99% (9,124,288B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                         |   |           ->01.99% (9,124,288B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                         |   |             ->01.99% (9,124,288B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                         |   |               ->01.99% (9,124,288B) 0x404556: main (main.c:23)
+|                         |   |                 
+|                         |   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         |   
+|                         ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         
+->07.92% (36,313,400B) 0x4F29998: google::protobuf::internal::RepeatedPtrFieldBase::InternalExtend(int) (repeated_field.cc:66)
+| ->04.98% (22,810,840B) 0x404BC7: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1734)
+| | ->04.98% (22,810,840B) 0x404BC7: Add (repeated_field.h:2181)
+| |   ->04.98% (22,810,840B) 0x404BC7: _internal_add_elem (gNMI.pb.h:7164)
+| |     ->04.98% (22,810,840B) 0x404BC7: add_elem (gNMI.pb.h:7168)
+| |       ->04.98% (22,810,840B) 0x404BC7: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |         ->04.98% (22,810,840B) 0x404556: main (main.c:23)
+| |           
+| ->01.24% (5,702,720B) 0x404BE6: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1734)
+| | ->01.24% (5,702,720B) 0x404BE6: Add (repeated_field.h:2181)
+| |   ->01.24% (5,702,720B) 0x404BE6: _internal_add_update (gNMI.pb.h:5526)
+| |     ->01.24% (5,702,720B) 0x404BE6: add_update (gNMI.pb.h:5530)
+| |       ->01.24% (5,702,720B) 0x404BE6: serializeDataIntoGetResp (proto_gnmi.c:47)
+| |         ->01.24% (5,702,720B) 0x404556: main (main.c:23)
+| |           
+| ->01.24% (5,702,680B) 0x413762: MergeFromInternal (repeated_field.h:1799)
+| | ->01.24% (5,702,680B) 0x413762: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+| |   ->01.24% (5,702,680B) 0x413762: MergeFrom (repeated_field.h:2287)
+| |     ->01.24% (5,702,680B) 0x413762: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+| |       ->01.24% (5,702,680B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+| |         ->01.24% (5,702,680B) 0x404556: main (main.c:23)
+| |           
+| ->00.46% (2,097,160B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->07.47% (34,216,272B) 0x411460: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+| ->07.47% (34,216,272B) 0x411460: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|   ->07.47% (34,216,272B) 0x411460: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|     ->07.47% (34,216,272B) 0x411460: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|       ->07.47% (34,216,272B) 0x411460: Init (map.h:315)
+|         ->07.47% (34,216,272B) 0x411460: Map (map.h:274)
+|           ->07.47% (34,216,272B) 0x411460: MapFieldLite (map_field_lite.h:68)
+|             ->07.47% (34,216,272B) 0x411460: MapField (map_field.h:455)
+|               ->07.47% (34,216,272B) 0x411460: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                 ->07.47% (34,216,224B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                 | ->07.47% (34,216,224B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                 |   ->05.97% (27,373,008B) 0x404A2A: New (repeated_field.h:802)
+|                 |   | ->05.97% (27,373,008B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->05.97% (27,373,008B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                 |   |     ->05.97% (27,373,008B) 0x404A2A: Add (repeated_field.h:2181)
+|                 |   |       ->05.97% (27,373,008B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                 |   |         ->05.97% (27,373,008B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                 |   |           ->05.97% (27,373,008B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                 |   |             ->05.97% (27,373,008B) 0x404556: main (main.c:23)
+|                 |   |               
+|                 |   ->01.49% (6,843,216B) 0x4264AD: New (repeated_field.h:802)
+|                 |   | ->01.49% (6,843,216B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->01.49% (6,843,216B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                 |   |     ->01.49% (6,843,216B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                 |   |       ->01.49% (6,843,216B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                 |   |         ->01.49% (6,843,216B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                 |   |           ->01.49% (6,843,216B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                 |   |             ->01.49% (6,843,216B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                 |   |               ->01.49% (6,843,216B) 0x404556: main (main.c:23)
+|                 |   |                 
+|                 |   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 |   
+|                 ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->07.34% (33,651,216B) 0x640DCD8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| ->07.34% (33,646,500B) 0x640F560: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.19)
+| | ->07.34% (33,646,500B) 0x640F997: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| |   ->03.98% (18,248,672B) 0x404AEA: set_string_val (gNMI.pb.h:5926)
+| |   | ->03.98% (18,248,672B) 0x404AEA: serializeDataIntoGetResp (proto_gnmi.c:50)
+| |   |   ->03.98% (18,248,672B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->03.36% (15,397,290B) 0x404A67: set_name (gNMI.pb.h:7296)
+| |   | ->03.36% (15,397,290B) 0x404A67: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |   |   ->03.36% (15,397,290B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->00.00% (538B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.00% (4,716B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.97% (27,373,008B) 0x408289: CreateMessageInternal<gnmi::Update> (arena.h:501)
+| ->05.97% (27,373,008B) 0x408289: gnmi::Update* google::protobuf::Arena::CreateMaybeMessage<gnmi::Update>(google::protobuf::Arena*) (gNMI.pb.cc:8672)
+|   ->05.97% (27,373,008B) 0x4049D2: New (repeated_field.h:802)
+|     ->05.97% (27,373,008B) 0x4049D2: NewFromPrototype (repeated_field.h:832)
+|       ->05.97% (27,373,008B) 0x4049D2: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1738)
+|         ->05.97% (27,373,008B) 0x4049D2: Add (repeated_field.h:2181)
+|           ->05.97% (27,373,008B) 0x4049D2: _internal_add_update (gNMI.pb.h:5526)
+|             ->05.97% (27,373,008B) 0x4049D2: add_update (gNMI.pb.h:5530)
+|               ->05.97% (27,373,008B) 0x4049D2: serializeDataIntoGetResp (proto_gnmi.c:47)
+|                 ->05.97% (27,373,008B) 0x404556: main (main.c:23)
+|                   
+->03.98% (18,248,672B) 0x408389: CreateMessageInternal<gnmi::TypedValue> (arena.h:501)
+| ->03.98% (18,248,672B) 0x408389: gnmi::TypedValue* google::protobuf::Arena::CreateMaybeMessage<gnmi::TypedValue>(google::protobuf::Arena*) (gNMI.pb.cc:8675)
+|   ->03.98% (18,248,672B) 0x404C46: CreateMaybeMessage<gnmi::TypedValue> (message_lite.h:450)
+|     ->03.98% (18,248,672B) 0x404C46: _internal_mutable_val (gNMI.pb.h:5815)
+|       ->03.98% (18,248,672B) 0x404C46: mutable_val (gNMI.pb.h:5822)
+|         ->03.98% (18,248,672B) 0x404C46: serializeDataIntoGetResp (proto_gnmi.c:50)
+|           ->03.98% (18,248,672B) 0x404556: main (main.c:23)
+|             
+->02.99% (13,686,528B) 0x416B19: CreateMessageInternal<gnmi::Notification> (arena.h:501)
+| ->02.99% (13,686,528B) 0x416B19: gnmi::Notification* google::protobuf::Arena::CreateMaybeMessage<gnmi::Notification>(google::protobuf::Arena*) (gNMI.pb.cc:8669)
+|   ->02.99% (13,686,528B) 0x404954: New (repeated_field.h:802)
+|     ->02.99% (13,686,528B) 0x404954: NewFromPrototype (repeated_field.h:832)
+|       ->02.99% (13,686,528B) 0x404954: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1738)
+|         ->02.99% (13,686,528B) 0x404954: Add (repeated_field.h:2181)
+|           ->02.99% (13,686,528B) 0x404954: _internal_add_notification (gNMI.pb.h:9784)
+|             ->02.99% (13,686,528B) 0x404954: add_notification (gNMI.pb.h:9788)
+|               ->02.99% (13,686,528B) 0x404954: serializeDataIntoGetResp (proto_gnmi.c:39)
+|                 ->02.99% (13,686,528B) 0x404556: main (main.c:23)
+|                   
+->02.24% (10,264,872B) 0x404ED9: CreateInternal<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:511)
+| ->02.24% (10,264,872B) 0x404ED9: DoCreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:561)
+|   ->02.24% (10,264,872B) 0x404ED9: CreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:568)
+|     ->02.24% (10,264,872B) 0x404ED9: CreateNoMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:587)
+|       ->02.24% (10,264,872B) 0x404ED9: Create<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:325)
+|         ->02.24% (10,264,872B) 0x404ED9: google::protobuf::internal::ArenaStringPtr::CreateInstance(google::protobuf::Arena*, std::string const*) (arenastring.h:373)
+|           ->02.24% (10,264,872B) in 4 places, all below massif's threshold (1.00%)
+|             
+->00.00% (10,960B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 53  2,122,591,985      437,571,936      356,464,472    81,107,464            0
+ 54  2,146,701,882      416,810,048      339,569,533    77,240,515            0
+ 55  2,170,811,831      396,047,880      322,674,330    73,373,550            0
+ 56  2,194,921,743      375,285,776      305,779,170    69,506,606            0
+ 57  2,219,031,689      354,523,752      288,884,122    65,639,630            0
+ 58  2,243,141,696      333,761,648      271,988,967    61,772,681            0
+ 59  2,267,251,645      312,999,464      255,093,764    57,905,700            0
+ 60  2,291,361,557      292,237,328      238,198,604    54,038,724            0
+ 61  2,315,471,454      271,475,472      221,303,665    50,171,807            0
+ 62  2,339,581,403      250,713,288      204,408,462    46,304,826            0
+81.53% (204,408,462B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.83% (49,719,168B) 0x411599: CreateMessageInternal<gnmi::PathElem> (arena.h:501)
+| ->19.83% (49,719,168B) 0x411599: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|   ->15.86% (39,775,360B) 0x404A2A: New (repeated_field.h:802)
+|   | ->15.86% (39,775,360B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|   |   ->15.86% (39,775,360B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|   |     ->15.86% (39,775,360B) 0x404A2A: Add (repeated_field.h:2181)
+|   |       ->15.86% (39,775,360B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|   |         ->15.86% (39,775,360B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|   |           ->15.86% (39,775,360B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |             ->15.86% (39,775,360B) 0x404556: main (main.c:23)
+|   |               
+|   ->03.97% (9,943,808B) 0x4264AD: New (repeated_field.h:802)
+|   | ->03.97% (9,943,808B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|   |   ->03.97% (9,943,808B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|   |     ->03.97% (9,943,808B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|   |       ->03.97% (9,943,808B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|   |         ->03.97% (9,943,808B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|   |           ->03.97% (9,943,808B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|   |             ->03.97% (9,943,808B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|   |               ->03.97% (9,943,808B) 0x404556: main (main.c:23)
+|   |                 
+|   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->13.63% (34,181,928B) 0x4101C9: CreateMessageInternal<gnmi::Path> (arena.h:501)
+| ->13.63% (34,181,928B) 0x4101C9: gnmi::Path* google::protobuf::Arena::CreateMaybeMessage<gnmi::Path>(google::protobuf::Arena*) (gNMI.pb.cc:8678)
+|   ->10.91% (27,345,560B) 0x404B9E: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|   | ->10.91% (27,345,560B) 0x404B9E: _internal_mutable_path (gNMI.pb.h:5653)
+|   |   ->10.91% (27,345,560B) 0x404B9E: mutable_path (gNMI.pb.h:5660)
+|   |     ->10.91% (27,345,560B) 0x404B9E: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |       ->10.91% (27,345,560B) 0x404556: main (main.c:23)
+|   |         
+|   ->02.73% (6,836,368B) 0x404CA6: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|     ->02.73% (6,836,368B) 0x404CA6: _internal_mutable_prefix (gNMI.pb.h:5389)
+|       ->02.73% (6,836,368B) 0x404CA6: mutable_prefix (gNMI.pb.h:5396)
+|         ->02.73% (6,836,368B) 0x404CA6: serializeDataIntoGetResp (proto_gnmi.c:43)
+|           ->02.73% (6,836,368B) 0x404556: main (main.c:23)
+|             
+->09.92% (24,859,648B) 0x425457: allocate (map.h:112)
+| ->09.92% (24,859,648B) 0x425457: Alloc<void*> (map.h:955)
+|   ->09.92% (24,859,648B) 0x425457: google::protobuf::Map<std::string, std::string>::InnerMap::CreateEmptyTable(unsigned long) (map.h:979)
+|     ->09.92% (24,859,648B) 0x411499: InnerMap (map.h:386)
+|       ->09.92% (24,859,648B) 0x411499: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+|         ->09.92% (24,859,648B) 0x411499: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|           ->09.92% (24,859,648B) 0x411499: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|             ->09.92% (24,859,648B) 0x411499: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|               ->09.92% (24,859,648B) 0x411499: Init (map.h:315)
+|                 ->09.92% (24,859,648B) 0x411499: Map (map.h:274)
+|                   ->09.92% (24,859,648B) 0x411499: MapFieldLite (map_field_lite.h:68)
+|                     ->09.92% (24,859,648B) 0x411499: MapField (map_field.h:455)
+|                       ->09.92% (24,859,648B) 0x411499: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                         ->09.92% (24,859,584B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                         | ->09.92% (24,859,584B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                         |   ->07.93% (19,887,680B) 0x404A2A: New (repeated_field.h:802)
+|                         |   | ->07.93% (19,887,680B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->07.93% (19,887,680B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                         |   |     ->07.93% (19,887,680B) 0x404A2A: Add (repeated_field.h:2181)
+|                         |   |       ->07.93% (19,887,680B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                         |   |         ->07.93% (19,887,680B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                         |   |           ->07.93% (19,887,680B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                         |   |             ->07.93% (19,887,680B) 0x404556: main (main.c:23)
+|                         |   |               
+|                         |   ->01.98% (4,971,904B) 0x4264AD: New (repeated_field.h:802)
+|                         |   | ->01.98% (4,971,904B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->01.98% (4,971,904B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                         |   |     ->01.98% (4,971,904B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                         |   |       ->01.98% (4,971,904B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                         |   |         ->01.98% (4,971,904B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                         |   |           ->01.98% (4,971,904B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                         |   |             ->01.98% (4,971,904B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                         |   |               ->01.98% (4,971,904B) 0x404556: main (main.c:23)
+|                         |   |                 
+|                         |   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         |   
+|                         ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         
+->08.27% (20,741,880B) 0x4F29998: google::protobuf::internal::RepeatedPtrFieldBase::InternalExtend(int) (repeated_field.cc:66)
+| ->04.96% (12,429,800B) 0x404BC7: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1734)
+| | ->04.96% (12,429,800B) 0x404BC7: Add (repeated_field.h:2181)
+| |   ->04.96% (12,429,800B) 0x404BC7: _internal_add_elem (gNMI.pb.h:7164)
+| |     ->04.96% (12,429,800B) 0x404BC7: add_elem (gNMI.pb.h:7168)
+| |       ->04.96% (12,429,800B) 0x404BC7: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |         ->04.96% (12,429,800B) 0x404556: main (main.c:23)
+| |           
+| ->01.24% (3,107,480B) 0x404BE6: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1734)
+| | ->01.24% (3,107,480B) 0x404BE6: Add (repeated_field.h:2181)
+| |   ->01.24% (3,107,480B) 0x404BE6: _internal_add_update (gNMI.pb.h:5526)
+| |     ->01.24% (3,107,480B) 0x404BE6: add_update (gNMI.pb.h:5530)
+| |       ->01.24% (3,107,480B) 0x404BE6: serializeDataIntoGetResp (proto_gnmi.c:47)
+| |         ->01.24% (3,107,480B) 0x404556: main (main.c:23)
+| |           
+| ->01.24% (3,107,440B) 0x413762: MergeFromInternal (repeated_field.h:1799)
+| | ->01.24% (3,107,440B) 0x413762: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+| |   ->01.24% (3,107,440B) 0x413762: MergeFrom (repeated_field.h:2287)
+| |     ->01.24% (3,107,440B) 0x413762: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+| |       ->01.24% (3,107,440B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+| |         ->01.24% (3,107,440B) 0x404556: main (main.c:23)
+| |           
+| ->00.84% (2,097,160B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->07.44% (18,644,736B) 0x411460: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+| ->07.44% (18,644,736B) 0x411460: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|   ->07.44% (18,644,736B) 0x411460: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|     ->07.44% (18,644,736B) 0x411460: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|       ->07.44% (18,644,736B) 0x411460: Init (map.h:315)
+|         ->07.44% (18,644,736B) 0x411460: Map (map.h:274)
+|           ->07.44% (18,644,736B) 0x411460: MapFieldLite (map_field_lite.h:68)
+|             ->07.44% (18,644,736B) 0x411460: MapField (map_field.h:455)
+|               ->07.44% (18,644,736B) 0x411460: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                 ->07.44% (18,644,688B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                 | ->07.44% (18,644,688B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                 |   ->05.95% (14,915,760B) 0x404A2A: New (repeated_field.h:802)
+|                 |   | ->05.95% (14,915,760B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->05.95% (14,915,760B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                 |   |     ->05.95% (14,915,760B) 0x404A2A: Add (repeated_field.h:2181)
+|                 |   |       ->05.95% (14,915,760B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                 |   |         ->05.95% (14,915,760B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                 |   |           ->05.95% (14,915,760B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                 |   |             ->05.95% (14,915,760B) 0x404556: main (main.c:23)
+|                 |   |               
+|                 |   ->01.49% (3,728,928B) 0x4264AD: New (repeated_field.h:802)
+|                 |   | ->01.49% (3,728,928B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->01.49% (3,728,928B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                 |   |     ->01.49% (3,728,928B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                 |   |       ->01.49% (3,728,928B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                 |   |         ->01.49% (3,728,928B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                 |   |           ->01.49% (3,728,928B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                 |   |             ->01.49% (3,728,928B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                 |   |               ->01.49% (3,728,928B) 0x404556: main (main.c:23)
+|                 |   |                 
+|                 |   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 |   
+|                 ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->07.31% (18,339,182B) 0x640DCD8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| ->07.31% (18,334,466B) 0x640F560: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.19)
+| | ->07.31% (18,334,466B) 0x640F997: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| |   ->03.97% (9,943,840B) 0x404AEA: set_string_val (gNMI.pb.h:5926)
+| |   | ->03.97% (9,943,840B) 0x404AEA: serializeDataIntoGetResp (proto_gnmi.c:50)
+| |   |   ->03.97% (9,943,840B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->03.35% (8,390,088B) 0x404A67: set_name (gNMI.pb.h:7296)
+| |   | ->03.35% (8,390,088B) 0x404A67: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |   |   ->03.35% (8,390,088B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->00.00% (538B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.00% (4,716B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.95% (14,915,760B) 0x408289: CreateMessageInternal<gnmi::Update> (arena.h:501)
+| ->05.95% (14,915,760B) 0x408289: gnmi::Update* google::protobuf::Arena::CreateMaybeMessage<gnmi::Update>(google::protobuf::Arena*) (gNMI.pb.cc:8672)
+|   ->05.95% (14,915,760B) 0x4049D2: New (repeated_field.h:802)
+|     ->05.95% (14,915,760B) 0x4049D2: NewFromPrototype (repeated_field.h:832)
+|       ->05.95% (14,915,760B) 0x4049D2: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1738)
+|         ->05.95% (14,915,760B) 0x4049D2: Add (repeated_field.h:2181)
+|           ->05.95% (14,915,760B) 0x4049D2: _internal_add_update (gNMI.pb.h:5526)
+|             ->05.95% (14,915,760B) 0x4049D2: add_update (gNMI.pb.h:5530)
+|               ->05.95% (14,915,760B) 0x4049D2: serializeDataIntoGetResp (proto_gnmi.c:47)
+|                 ->05.95% (14,915,760B) 0x404556: main (main.c:23)
+|                   
+->03.97% (9,943,840B) 0x408389: CreateMessageInternal<gnmi::TypedValue> (arena.h:501)
+| ->03.97% (9,943,840B) 0x408389: gnmi::TypedValue* google::protobuf::Arena::CreateMaybeMessage<gnmi::TypedValue>(google::protobuf::Arena*) (gNMI.pb.cc:8675)
+|   ->03.97% (9,943,840B) 0x404C46: CreateMaybeMessage<gnmi::TypedValue> (message_lite.h:450)
+|     ->03.97% (9,943,840B) 0x404C46: _internal_mutable_val (gNMI.pb.h:5815)
+|       ->03.97% (9,943,840B) 0x404C46: mutable_val (gNMI.pb.h:5822)
+|         ->03.97% (9,943,840B) 0x404C46: serializeDataIntoGetResp (proto_gnmi.c:50)
+|           ->03.97% (9,943,840B) 0x404556: main (main.c:23)
+|             
+->02.97% (7,457,952B) 0x416B19: CreateMessageInternal<gnmi::Notification> (arena.h:501)
+| ->02.97% (7,457,952B) 0x416B19: gnmi::Notification* google::protobuf::Arena::CreateMaybeMessage<gnmi::Notification>(google::protobuf::Arena*) (gNMI.pb.cc:8669)
+|   ->02.97% (7,457,952B) 0x404954: New (repeated_field.h:802)
+|     ->02.97% (7,457,952B) 0x404954: NewFromPrototype (repeated_field.h:832)
+|       ->02.97% (7,457,952B) 0x404954: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1738)
+|         ->02.97% (7,457,952B) 0x404954: Add (repeated_field.h:2181)
+|           ->02.97% (7,457,952B) 0x404954: _internal_add_notification (gNMI.pb.h:9784)
+|             ->02.97% (7,457,952B) 0x404954: add_notification (gNMI.pb.h:9788)
+|               ->02.97% (7,457,952B) 0x404954: serializeDataIntoGetResp (proto_gnmi.c:39)
+|                 ->02.97% (7,457,952B) 0x404556: main (main.c:23)
+|                   
+->02.23% (5,593,408B) 0x404ED9: CreateInternal<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:511)
+| ->02.23% (5,593,408B) 0x404ED9: DoCreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:561)
+|   ->02.23% (5,593,408B) 0x404ED9: CreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:568)
+|     ->02.23% (5,593,408B) 0x404ED9: CreateNoMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:587)
+|       ->02.23% (5,593,408B) 0x404ED9: Create<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:325)
+|         ->02.23% (5,593,408B) 0x404ED9: google::protobuf::internal::ArenaStringPtr::CreateInstance(google::protobuf::Arena*, std::string const*) (arenastring.h:373)
+|           ->02.23% (5,593,408B) in 4 places, all below massif's threshold (1.00%)
+|             
+->00.00% (10,960B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 63  2,363,691,315      229,951,136      187,513,302    42,437,834            0
+ 64  2,387,801,261      209,189,160      170,618,254    38,570,906            0
+ 65  2,411,911,268      188,427,040      153,723,099    34,703,941            0
+ 66  2,436,021,217      167,664,824      136,827,896    30,836,928            0
+ 67  2,460,131,129      146,902,736      119,932,736    26,970,000            0
+ 68  2,484,241,026      126,140,848      103,037,797    23,103,051            0
+ 69  2,508,350,975      105,378,648       86,142,594    19,236,054            0
+ 70  2,532,460,887       84,616,544       69,247,434    15,369,110            0
+ 71  2,556,570,833       63,854,536       52,352,386    11,502,150            0
+ 72  2,580,680,840       43,092,400       35,457,231     7,635,169            0
+82.28% (35,457,231B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.02% (8,195,072B) 0x411599: CreateMessageInternal<gnmi::PathElem> (arena.h:501)
+| ->19.02% (8,195,072B) 0x411599: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|   ->15.21% (6,556,160B) 0x404A2A: New (repeated_field.h:802)
+|   | ->15.21% (6,556,160B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|   |   ->15.21% (6,556,160B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|   |     ->15.21% (6,556,160B) 0x404A2A: Add (repeated_field.h:2181)
+|   |       ->15.21% (6,556,160B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|   |         ->15.21% (6,556,160B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|   |           ->15.21% (6,556,160B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |             ->15.21% (6,556,160B) 0x404556: main (main.c:23)
+|   |               
+|   ->03.80% (1,638,912B) 0x4264AD: New (repeated_field.h:802)
+|   | ->03.80% (1,638,912B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|   |   ->03.80% (1,638,912B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|   |     ->03.80% (1,638,912B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|   |       ->03.80% (1,638,912B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|   |         ->03.80% (1,638,912B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|   |           ->03.80% (1,638,912B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|   |             ->03.80% (1,638,912B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|   |               ->03.80% (1,638,912B) 0x404556: main (main.c:23)
+|   |                 
+|   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->13.07% (5,634,112B) 0x4101C9: CreateMessageInternal<gnmi::Path> (arena.h:501)
+| ->13.07% (5,634,112B) 0x4101C9: gnmi::Path* google::protobuf::Arena::CreateMaybeMessage<gnmi::Path>(google::protobuf::Arena*) (gNMI.pb.cc:8678)
+|   ->10.46% (4,507,360B) 0x404B9E: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|   | ->10.46% (4,507,360B) 0x404B9E: _internal_mutable_path (gNMI.pb.h:5653)
+|   |   ->10.46% (4,507,360B) 0x404B9E: mutable_path (gNMI.pb.h:5660)
+|   |     ->10.46% (4,507,360B) 0x404B9E: serializeDataIntoGetResp (proto_gnmi.c:48)
+|   |       ->10.46% (4,507,360B) 0x404556: main (main.c:23)
+|   |         
+|   ->02.61% (1,126,752B) 0x404CA6: CreateMaybeMessage<gnmi::Path> (message_lite.h:450)
+|     ->02.61% (1,126,752B) 0x404CA6: _internal_mutable_prefix (gNMI.pb.h:5389)
+|       ->02.61% (1,126,752B) 0x404CA6: mutable_prefix (gNMI.pb.h:5396)
+|         ->02.61% (1,126,752B) 0x404CA6: serializeDataIntoGetResp (proto_gnmi.c:43)
+|           ->02.61% (1,126,752B) 0x404556: main (main.c:23)
+|             
+->12.00% (5,170,320B) 0x4F29998: google::protobuf::internal::RepeatedPtrFieldBase::InternalExtend(int) (repeated_field.cc:66)
+| ->04.87% (2,097,160B) 0x404C80: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1734)
+| | ->04.87% (2,097,160B) 0x404C80: Add (repeated_field.h:2181)
+| |   ->04.87% (2,097,160B) 0x404C80: _internal_add_notification (gNMI.pb.h:9784)
+| |     ->04.87% (2,097,160B) 0x404C80: add_notification (gNMI.pb.h:9788)
+| |       ->04.87% (2,097,160B) 0x404C80: serializeDataIntoGetResp (proto_gnmi.c:39)
+| |         ->04.87% (2,097,160B) 0x404556: main (main.c:23)
+| |           
+| ->04.75% (2,048,800B) 0x404BC7: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1734)
+| | ->04.75% (2,048,800B) 0x404BC7: Add (repeated_field.h:2181)
+| |   ->04.75% (2,048,800B) 0x404BC7: _internal_add_elem (gNMI.pb.h:7164)
+| |     ->04.75% (2,048,800B) 0x404BC7: add_elem (gNMI.pb.h:7168)
+| |       ->04.75% (2,048,800B) 0x404BC7: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |         ->04.75% (2,048,800B) 0x404556: main (main.c:23)
+| |           
+| ->01.19% (512,200B) 0x404BE6: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1734)
+| | ->01.19% (512,200B) 0x404BE6: Add (repeated_field.h:2181)
+| |   ->01.19% (512,200B) 0x404BE6: _internal_add_update (gNMI.pb.h:5526)
+| |     ->01.19% (512,200B) 0x404BE6: add_update (gNMI.pb.h:5530)
+| |       ->01.19% (512,200B) 0x404BE6: serializeDataIntoGetResp (proto_gnmi.c:47)
+| |         ->01.19% (512,200B) 0x404556: main (main.c:23)
+| |           
+| ->01.19% (512,160B) 0x413762: MergeFromInternal (repeated_field.h:1799)
+| | ->01.19% (512,160B) 0x413762: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+| |   ->01.19% (512,160B) 0x413762: MergeFrom (repeated_field.h:2287)
+| |     ->01.19% (512,160B) 0x413762: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+| |       ->01.19% (512,160B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+| |         ->01.19% (512,160B) 0x404556: main (main.c:23)
+| |           
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.51% (4,097,536B) 0x425457: allocate (map.h:112)
+| ->09.51% (4,097,536B) 0x425457: Alloc<void*> (map.h:955)
+|   ->09.51% (4,097,536B) 0x425457: google::protobuf::Map<std::string, std::string>::InnerMap::CreateEmptyTable(unsigned long) (map.h:979)
+|     ->09.51% (4,097,536B) 0x411499: InnerMap (map.h:386)
+|       ->09.51% (4,097,536B) 0x411499: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+|         ->09.51% (4,097,536B) 0x411499: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|           ->09.51% (4,097,536B) 0x411499: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|             ->09.51% (4,097,536B) 0x411499: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|               ->09.51% (4,097,536B) 0x411499: Init (map.h:315)
+|                 ->09.51% (4,097,536B) 0x411499: Map (map.h:274)
+|                   ->09.51% (4,097,536B) 0x411499: MapFieldLite (map_field_lite.h:68)
+|                     ->09.51% (4,097,536B) 0x411499: MapField (map_field.h:455)
+|                       ->09.51% (4,097,536B) 0x411499: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                         ->09.51% (4,097,472B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                         | ->09.51% (4,097,472B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                         |   ->07.61% (3,278,016B) 0x404A2A: New (repeated_field.h:802)
+|                         |   | ->07.61% (3,278,016B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->07.61% (3,278,016B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                         |   |     ->07.61% (3,278,016B) 0x404A2A: Add (repeated_field.h:2181)
+|                         |   |       ->07.61% (3,278,016B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                         |   |         ->07.61% (3,278,016B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                         |   |           ->07.61% (3,278,016B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                         |   |             ->07.61% (3,278,016B) 0x404556: main (main.c:23)
+|                         |   |               
+|                         |   ->01.90% (819,456B) 0x4264AD: New (repeated_field.h:802)
+|                         |   | ->01.90% (819,456B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                         |   |   ->01.90% (819,456B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                         |   |     ->01.90% (819,456B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                         |   |       ->01.90% (819,456B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                         |   |         ->01.90% (819,456B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                         |   |           ->01.90% (819,456B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                         |   |             ->01.90% (819,456B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                         |   |               ->01.90% (819,456B) 0x404556: main (main.c:23)
+|                         |   |                 
+|                         |   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         |   
+|                         ->00.00% (64B) in 1+ places, all below ms_print's threshold (01.00%)
+|                         
+->07.13% (3,073,200B) 0x411460: CreateMessageInternal<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:486)
+| ->07.13% (3,073,200B) 0x411460: DoCreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:554)
+|   ->07.13% (3,073,200B) 0x411460: CreateMaybeMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:568)
+|     ->07.13% (3,073,200B) 0x411460: CreateMessage<google::protobuf::Map<std::basic_string<char>, std::basic_string<char> >::InnerMap, unsigned int> (arena.h:304)
+|       ->07.13% (3,073,200B) 0x411460: Init (map.h:315)
+|         ->07.13% (3,073,200B) 0x411460: Map (map.h:274)
+|           ->07.13% (3,073,200B) 0x411460: MapFieldLite (map_field_lite.h:68)
+|             ->07.13% (3,073,200B) 0x411460: MapField (map_field.h:455)
+|               ->07.13% (3,073,200B) 0x411460: gnmi::PathElem::PathElem(google::protobuf::Arena*) (gNMI.pb.cc:2855)
+|                 ->07.13% (3,073,152B) 0x4115A6: CreateMessageInternal<gnmi::PathElem> (gNMI.pb.h:1465)
+|                 | ->07.13% (3,073,152B) 0x4115A6: gnmi::PathElem* google::protobuf::Arena::CreateMaybeMessage<gnmi::PathElem>(google::protobuf::Arena*) (gNMI.pb.cc:8684)
+|                 |   ->05.71% (2,458,560B) 0x404A2A: New (repeated_field.h:802)
+|                 |   | ->05.71% (2,458,560B) 0x404A2A: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->05.71% (2,458,560B) 0x404A2A: Add<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1738)
+|                 |   |     ->05.71% (2,458,560B) 0x404A2A: Add (repeated_field.h:2181)
+|                 |   |       ->05.71% (2,458,560B) 0x404A2A: _internal_add_elem (gNMI.pb.h:7164)
+|                 |   |         ->05.71% (2,458,560B) 0x404A2A: add_elem (gNMI.pb.h:7168)
+|                 |   |           ->05.71% (2,458,560B) 0x404A2A: serializeDataIntoGetResp (proto_gnmi.c:48)
+|                 |   |             ->05.71% (2,458,560B) 0x404556: main (main.c:23)
+|                 |   |               
+|                 |   ->01.43% (614,592B) 0x4264AD: New (repeated_field.h:802)
+|                 |   | ->01.43% (614,592B) 0x4264AD: NewFromPrototype (repeated_field.h:832)
+|                 |   |   ->01.43% (614,592B) 0x4264AD: void google::protobuf::internal::RepeatedPtrFieldBase::MergeFromInnerLoop<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler>(void**, void**, int, int) (repeated_field.h:1830)
+|                 |   |     ->01.43% (614,592B) 0x41377E: MergeFromInternal (repeated_field.h:1802)
+|                 |   |       ->01.43% (614,592B) 0x41377E: MergeFrom<google::protobuf::RepeatedPtrField<gnmi::PathElem>::TypeHandler> (repeated_field.h:1789)
+|                 |   |         ->01.43% (614,592B) 0x41377E: MergeFrom (repeated_field.h:2287)
+|                 |   |           ->01.43% (614,592B) 0x41377E: gnmi::Path::MergeFrom(gnmi::Path const&) (gNMI.pb.cc:2787)
+|                 |   |             ->01.43% (614,592B) 0x404996: serializeDataIntoGetResp (proto_gnmi.c:43)
+|                 |   |               ->01.43% (614,592B) 0x404556: main (main.c:23)
+|                 |   |                 
+|                 |   ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 |   
+|                 ->00.00% (48B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->07.02% (3,027,207B) 0x640DCD8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| ->07.01% (3,022,491B) 0x640F560: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.19)
+| | ->07.01% (3,022,491B) 0x640F997: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.19)
+| |   ->03.80% (1,639,040B) 0x404AEA: set_string_val (gNMI.pb.h:5926)
+| |   | ->03.80% (1,639,040B) 0x404AEA: serializeDataIntoGetResp (proto_gnmi.c:50)
+| |   |   ->03.80% (1,639,040B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->03.21% (1,382,913B) 0x404A67: set_name (gNMI.pb.h:7296)
+| |   | ->03.21% (1,382,913B) 0x404A67: serializeDataIntoGetResp (proto_gnmi.c:48)
+| |   |   ->03.21% (1,382,913B) 0x404556: main (main.c:23)
+| |   |     
+| |   ->00.00% (538B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.01% (4,716B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.71% (2,458,560B) 0x408289: CreateMessageInternal<gnmi::Update> (arena.h:501)
+| ->05.71% (2,458,560B) 0x408289: gnmi::Update* google::protobuf::Arena::CreateMaybeMessage<gnmi::Update>(google::protobuf::Arena*) (gNMI.pb.cc:8672)
+|   ->05.71% (2,458,560B) 0x4049D2: New (repeated_field.h:802)
+|     ->05.71% (2,458,560B) 0x4049D2: NewFromPrototype (repeated_field.h:832)
+|       ->05.71% (2,458,560B) 0x4049D2: Add<google::protobuf::RepeatedPtrField<gnmi::Update>::TypeHandler> (repeated_field.h:1738)
+|         ->05.71% (2,458,560B) 0x4049D2: Add (repeated_field.h:2181)
+|           ->05.71% (2,458,560B) 0x4049D2: _internal_add_update (gNMI.pb.h:5526)
+|             ->05.71% (2,458,560B) 0x4049D2: add_update (gNMI.pb.h:5530)
+|               ->05.71% (2,458,560B) 0x4049D2: serializeDataIntoGetResp (proto_gnmi.c:47)
+|                 ->05.71% (2,458,560B) 0x404556: main (main.c:23)
+|                   
+->03.80% (1,639,040B) 0x408389: CreateMessageInternal<gnmi::TypedValue> (arena.h:501)
+| ->03.80% (1,639,040B) 0x408389: gnmi::TypedValue* google::protobuf::Arena::CreateMaybeMessage<gnmi::TypedValue>(google::protobuf::Arena*) (gNMI.pb.cc:8675)
+|   ->03.80% (1,639,040B) 0x404C46: CreateMaybeMessage<gnmi::TypedValue> (message_lite.h:450)
+|     ->03.80% (1,639,040B) 0x404C46: _internal_mutable_val (gNMI.pb.h:5815)
+|       ->03.80% (1,639,040B) 0x404C46: mutable_val (gNMI.pb.h:5822)
+|         ->03.80% (1,639,040B) 0x404C46: serializeDataIntoGetResp (proto_gnmi.c:50)
+|           ->03.80% (1,639,040B) 0x404556: main (main.c:23)
+|             
+->02.85% (1,229,280B) 0x416B19: CreateMessageInternal<gnmi::Notification> (arena.h:501)
+| ->02.85% (1,229,280B) 0x416B19: gnmi::Notification* google::protobuf::Arena::CreateMaybeMessage<gnmi::Notification>(google::protobuf::Arena*) (gNMI.pb.cc:8669)
+|   ->02.85% (1,229,280B) 0x404954: New (repeated_field.h:802)
+|     ->02.85% (1,229,280B) 0x404954: NewFromPrototype (repeated_field.h:832)
+|       ->02.85% (1,229,280B) 0x404954: Add<google::protobuf::RepeatedPtrField<gnmi::Notification>::TypeHandler> (repeated_field.h:1738)
+|         ->02.85% (1,229,280B) 0x404954: Add (repeated_field.h:2181)
+|           ->02.85% (1,229,280B) 0x404954: _internal_add_notification (gNMI.pb.h:9784)
+|             ->02.85% (1,229,280B) 0x404954: add_notification (gNMI.pb.h:9788)
+|               ->02.85% (1,229,280B) 0x404954: serializeDataIntoGetResp (proto_gnmi.c:39)
+|                 ->02.85% (1,229,280B) 0x404556: main (main.c:23)
+|                   
+->02.14% (921,944B) 0x404ED9: CreateInternal<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:511)
+| ->02.14% (921,944B) 0x404ED9: DoCreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:561)
+|   ->02.14% (921,944B) 0x404ED9: CreateMaybeMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:568)
+|     ->02.14% (921,944B) 0x404ED9: CreateNoMessage<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:587)
+|       ->02.14% (921,944B) 0x404ED9: Create<std::basic_string<char>, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >&> (arena.h:325)
+|         ->02.14% (921,944B) 0x404ED9: google::protobuf::internal::ArenaStringPtr::CreateInstance(google::protobuf::Arena*, std::string const*) (arenastring.h:373)
+|           ->02.14% (921,944B) in 4 places, all below massif's threshold (1.00%)
+|             
+->00.03% (10,960B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 73  2,604,790,789       22,330,232       18,562,028     3,768,204            0
+ 74  2,630,152,158           18,792           15,660         3,132            0
